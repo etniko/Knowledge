@@ -158,6 +158,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
+<li>$:/config/Plugins/Disabled/$:/plugins/nico/notebook-mobile</li>
+
 <li>$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/share</li>
 
 <li>$:/core</li>
@@ -184,7 +186,7 @@ Error message and password prompt
 
 <li>$:/palettes/Blanca Orange</li>
 
-<li>$:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js</li>
+<li>$:/plugins/nico/notebook-mobile</li>
 
 <li>$:/plugins/tiddlywiki/share</li>
 
@@ -224,6 +226,8 @@ Error message and password prompt
 
 <li>$:/state/tab--959111941</li>
 
+<li>$:/state/tab-1163638994</li>
+
 <li>$:/state/tab-1749438307</li>
 
 <li>$:/state/tab-2065006209</li>
@@ -249,6 +253,10 @@ Error message and password prompt
 <li>$:/themes/nico/notebook</li>
 
 <li>$:/themes/nico/notebook/base</li>
+
+<li>$:/themes/nico/notebook/metrics/story-width</li>
+
+<li>$:/themes/nico/notebook/options/stickytitles</li>
 
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
@@ -364,6 +372,9 @@ Error message and password prompt
 <div id="storeArea" style="display:none;">
 <div created="20210706055223373" modified="20210706055223373" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
+</div>
+<div created="20210707221231454" modified="20210707221235420" title="$:/config/Plugins/Disabled/$:/plugins/nico/notebook-mobile">
+<pre>no</pre>
 </div>
 <div created="20210706054948753" modified="20210706054948753" title="$:/config/Plugins/Disabled/$:/plugins/tiddlywiki/share">
 <pre>yes</pre>
@@ -10253,7 +10264,7 @@ Error message and password prompt
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js]]</pre>
+# [[$:/plugins/nico/notebook-mobile]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10371,49 +10382,20 @@ toolbar-done-button:
 untagged-background: #999999
 very-muted-foreground: #888888</pre>
 </div>
-<div created="20200430151329085" modified="20201210200127495" module-type="global" tags="" title="$:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js" type="application/javascript">
-<pre>/*\
-title: $:/themes/nico/notebook-mobile/js/notebookSidebarNav.js
-type: application/javascript
-module-type: global
-
-Closes the notebook sidebar on mobile when navigating
-
-\*/
-(function(){
-
-    /*jslint node: true, browser: true */
-    /*global $tw: false */
-    &quot;use strict&quot;;
-
-    const isOnMobile = () =&gt; {
-		let bottombar = document.querySelector('.nc-bottombar');
-		return bottombar &amp;&amp; bottombar.getClientRects().length &gt; 0;
-    };
-
-    const closeSidebar = () =&gt; {
-		$tw.wiki.setText(&quot;$:/state/notebook-sidebar&quot;, &quot;text&quot;, undefined, &quot;no&quot;);
-    };
-
-    const closeSidebarOnMobile = () =&gt; {
-		if (isOnMobile()) {
-            console.log(&quot;closing sidebar&quot;);
-			closeSidebar();
-		};
-    };
-
-    const setup = () =&gt; {
-		$tw.hooks.addHook(&quot;th-navigating&quot;,function(event) {
-			closeSidebarOnMobile();
-			return event;
-		});
-    };
-
-    setup();
-
-    exports.closeNotebookSidebar = closeSidebar;
-})();
-</pre>
+<div author="NicolasPetton" bag="default" core-version="&gt;=5.1.22" dependents="" description="JavaScript hooks for mobile devices support of the Notebook theme" list="" name="Mobile support for the Notebook theme" plugin-type="plugin" revision="0" source="https://github.com/NicolasPetton/Notebook" title="$:/plugins/nico/notebook-mobile" type="application/json" version="1.0.0">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js&quot;,
+            &quot;text&quot;: &quot;/*\\\ntitle: $:/themes/nico/notebook-mobile/js/notebookSidebarNav.js\ntype: application/javascript\nmodule-type: global\n\nCloses the notebook sidebar on mobile when navigating\n\n\\*/\n(function(){\n\n    /*jslint node: true, browser: true */\n    /*global $tw: false */\n    \&quot;use strict\&quot;;\n\n    const isOnMobile = () =&gt; {\n\t\tlet bottombar = document.querySelector('.nc-bottombar');\n\t\treturn bottombar &amp;&amp; bottombar.getClientRects().length &gt; 0;\n    };\n\n    const closeSidebar = () =&gt; {\n\t\t$tw.wiki.setText(\&quot;$:/state/notebook-sidebar\&quot;, \&quot;text\&quot;, undefined, \&quot;no\&quot;);\n    };\n\n    const closeSidebarOnMobile = () =&gt; {\n\t\tif (isOnMobile()) {\n            console.log(\&quot;closing sidebar\&quot;);\n\t\t\tcloseSidebar();\n\t\t};\n    };\n\n    const setup = () =&gt; {\n\t\t$tw.hooks.addHook(\&quot;th-navigating\&quot;,function(event) {\n\t\t\tcloseSidebarOnMobile();\n\t\t\treturn event;\n\t\t});\n    };\n\n    setup();\n\n    exports.closeNotebookSidebar = closeSidebar;\n})();\n&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;global&quot;,
+            &quot;created&quot;: &quot;20200430151329085&quot;,
+            &quot;modified&quot;: &quot;20201210200127495&quot;,
+            &quot;tags&quot;: &quot;&quot;
+        }
+    }
+}</pre>
 </div>
 <div dependents="" description="Sharing tiddlers via URLs" list="readme wizard settings" name="Share" plugin-type="plugin" title="$:/plugins/tiddlywiki/share" type="application/json" version="5.1.23">
 <pre>{
@@ -10600,11 +10582,11 @@ Closes the notebook sidebar on mobile when navigating
 <div created="20210706045806414" modified="20210706045810788" title="$:/SiteTitle">
 <pre>Knowledge</pre>
 </div>
-<div created="20210706234800883" modified="20210707002652995" title="$:/state/notebook-sidebar">
+<div created="20210706234800883" modified="20210707221448256" title="$:/state/notebook-sidebar">
 <pre>no</pre>
 </div>
-<div created="20210706235419546" modified="20210707002620275" title="$:/state/notebook-sidebar-section">
-<pre></pre>
+<div created="20210706235419546" modified="20210707220958001" title="$:/state/notebook-sidebar-section">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210707002527958" modified="20210707002527959" title="$:/state/peek-stylesheets/open/--994748944$:/themes/nico/notebook/base">
 <pre>yes</pre>
@@ -10618,10 +10600,10 @@ Closes the notebook sidebar on mobile when navigating
 <div created="20210706055948874" modified="20210706055948874" title="$:/state/peek-stylesheets/open/--994748944Custom data-styles">
 <pre>yes</pre>
 </div>
-<div created="20210706235500332" modified="20210707000652278" title="$:/state/plugin-info--1802027394-$:/themes/nico/notebook---538834486">
-<pre>changelog</pre>
+<div created="20210706235500332" modified="20210707221219907" title="$:/state/plugin-info--1802027394-$:/themes/nico/notebook---538834486">
+<pre>contents</pre>
 </div>
-<div created="20210707003331759" modified="20210707220845201" title="$:/state/plugin-info--270617185-$:/themes/nico/notebook">
+<div created="20210707003331759" modified="20210707221202613" title="$:/state/plugin-info--270617185-$:/themes/nico/notebook">
 <pre>no</pre>
 </div>
 <div created="20210707003339101" modified="20210707003339101" title="$:/state/plugin-info--270617185-$:/themes/nico/notebook---932240941">
@@ -10633,26 +10615,29 @@ Closes the notebook sidebar on mobile when navigating
 <div created="20210706054630810" modified="20210706054631632" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Themes</pre>
 </div>
-<div created="20210706054313563" modified="20210707003312543" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Palette</pre>
+<div created="20210706054313563" modified="20210707221503648" title="$:/state/tab--1963855381">
+<pre>$:/themes/nico/notebook/themetweaks</pre>
 </div>
 <div created="20210706055707613" modified="20210707002531903" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
 </div>
-<div created="20210707003327180" modified="20210707220841943" title="$:/state/tab--86143343">
-<pre>$:/core/ui/ControlPanel/Plugins/Installed/Themes</pre>
+<div created="20210707003327180" modified="20210707221524452" title="$:/state/tab--86143343">
+<pre>$:/core/ui/ControlPanel/Plugins/Installed/Plugins</pre>
 </div>
 <div created="20210706055713269" modified="20210707002512838" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/Stylesheets</pre>
 </div>
-<div created="20210706045814375" modified="20210707220839746" title="$:/state/tab-1749438307">
+<div created="20210707221404519" modified="20210707221418968" title="$:/state/tab-1163638994">
+<pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
+</div>
+<div created="20210706045814375" modified="20210707221517093" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Plugins</pre>
 </div>
 <div created="20210706045817168" modified="20210706060134668" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20210706055643975" modified="20210706235432257" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/System</pre>
+<div created="20210706055643975" modified="20210707221009082" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/Plugins</pre>
 </div>
 <div created="20210706054121314" modified="20210706060739296" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
@@ -10667,12 +10652,12 @@ Closes the notebook sidebar on mobile when navigating
 <pre>open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>yes</pre>
+<pre>no</pre>
 </div>
-<div created="20210707220823410" list="$:/Import $:/ControlPanel KnowlEdge" modified="20210707220823410" title="$:/StoryList">
+<div created="20210707220939547" list="$:/plugins/nico/notebook-mobile $:/plugins/nico/notebook-mobile/js/notebookSidebarNav.js $:/ControlPanel $:/themes/nico/notebook KnowlEdge" modified="20210707221334227" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210706060234490" modified="20210707003307191" title="$:/theme">
+<div created="20210706060234490" modified="20210707221156555" title="$:/theme">
 <pre>$:/themes/nico/notebook</pre>
 </div>
 <div author="JD" core-version="&gt;=5.1.14" created="20180326154440385" creator="jd" dependents="$:/themes/tiddlywiki/vanilla" description="Not-quite-there-yet quantum paper for TW5" list="contents readme" modified="20180727131047369" modifier="jd" name="Material" plugin-type="theme" title="$:/themes/jd/Material" type="application/json" version="0.4.14">
@@ -11746,6 +11731,12 @@ div.tc-tab-buttons button.tc-tab-selected {
   font-size: .8em;
 }
 </pre>
+</div>
+<div created="20210123210054185" modified="20210707194616692" tags="" title="$:/themes/nico/notebook/metrics/story-width" type="text/vnd.tiddlywiki">
+<pre>800px</pre>
+</div>
+<div created="20210707194523029" modified="20210707194523029" title="$:/themes/nico/notebook/options/stickytitles">
+<pre>yes</pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
 <pre>{
