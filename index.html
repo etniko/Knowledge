@@ -356,8 +356,6 @@ Error message and password prompt
 
 <li>Robotics</li>
 
-<li>Sidebar to the top</li>
-
 <li>StylesheetModifiedMaury</li>
 
 <li>Sustainable Development Goals</li>
@@ -10647,8 +10645,8 @@ very-muted-foreground: #888888</pre>
 <div created="20210706054630810" modified="20210706054631632" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Themes</pre>
 </div>
-<div created="20210706054313563" modified="20210707224812114" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/Theme</pre>
+<div created="20210706054313563" modified="20210707225914580" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/StoryView</pre>
 </div>
 <div created="20210706055707613" modified="20210707002531903" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Basics</pre>
@@ -10662,8 +10660,8 @@ very-muted-foreground: #888888</pre>
 <div created="20210707221404519" modified="20210707221418968" title="$:/state/tab-1163638994">
 <pre>$:/core/ui/MoreSideBar/Plugins/Plugins</pre>
 </div>
-<div created="20210706045814375" modified="20210707224815489" title="$:/state/tab-1749438307">
-<pre>$:/core/ui/ControlPanel/Plugins</pre>
+<div created="20210706045814375" modified="20210707225912365" title="$:/state/tab-1749438307">
+<pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20210706045817168" modified="20210706060134668" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
@@ -10686,7 +10684,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[Sidebar to the top]] KnowlEdge" title="$:/StoryList">
+<div created="20210707225854377" list="$:/ControlPanel" modified="20210707225905332" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210707224747901" title="$:/theme">
@@ -11897,8 +11895,8 @@ div.tc-tab-buttons button.tc-tab-selected {
 <div created="20210706060252010" modified="20210706231557964" title="$:/themes/tiddlywiki/vanilla/settings/fontfamily">
 <pre>ubuntu, open sans, system-ui, -apple-system, &quot;Segoe UI&quot;, Roboto, Helvetica, Arial, sans-serif, &quot;Apple Color Emoji&quot;, &quot;Segoe UI Emoji&quot;</pre>
 </div>
-<div created="20210706054315557" modified="20210707224708547" title="$:/view">
-<pre>zoomin</pre>
+<div created="20210706054315557" modified="20210707225916127" title="$:/view">
+<pre>classic</pre>
 </div>
 <div created="20140912145139340" modified="20210701194339195" tags="TableOfContents" title="About" type="text/vnd.tiddlywiki">
 <pre>The world's economy actors need to consider and value the natural assets in all its process. Is up to us how well and how soon we embed it in our business plans, financial statements, accounting standard methods, investments, trade and statistical and demographic measures and how we use technology to attain such goals.
@@ -12203,28 +12201,6 @@ to offset these differentials in the long run.</pre>
 <pre>. Humanoid hardware built to assist humans.
 
 . Robotics is an interdisciplinary sector of science and engineering dedicated to the design, construction and use of mechanical robots. Our guide will give you a concrete grasp of robotics, including different types of robots and how they're being applied across industries.</pre>
-</div>
-<div created="20210707225352660" modified="20210707225410142" tags="" title="Sidebar to the top">
-<pre>created: 20170524173725525
-modified: 20170524173926916
-tags: $:/tags/TopRightBar
-title: $:/core/ui/TopBar/menu
-
-\define config-title()
-$:/config/PageControlButtons/Visibility/$(listItem)$
-\end
-
-&lt;$reveal state=&quot;$:/state/sidebar&quot; type=&quot;nomatch&quot; text=&quot;no&quot;&gt;
-&lt;$button set=&quot;$:/state/sidebar&quot; setTo=&quot;no&quot; tooltip={{$:/language/Buttons/HideSideBar/Hint}} aria-label={{$:/language/Buttons/HideSideBar/Caption}} class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;
-&lt;/$reveal&gt;
-&lt;$reveal state=&quot;$:/state/sidebar&quot; type=&quot;match&quot; text=&quot;no&quot;&gt;
-&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/PageControls]!has[draft.of]]&quot; variable=&quot;listItem&quot;&gt;
-&lt;$reveal type=&quot;nomatch&quot; state=&lt;&lt;config-title&gt;&gt; text=&quot;hide&quot;&gt;
-&lt;$transclude tiddler=&lt;&lt;listItem&gt;&gt; mode=&quot;inline&quot;/&gt;
-&lt;/$reveal&gt;
-&lt;/$list&gt;
-&lt;$button set=&quot;$:/state/sidebar&quot; setTo=&quot;yes&quot; tooltip={{$:/language/Buttons/ShowSideBar/Hint}} aria-label={{$:/language/Buttons/ShowSideBar/Caption}} class=&quot;tc-btn-invisible&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;
-&lt;/$reveal&gt;</pre>
 </div>
 <div created="20201205193220691" modified="20210704021805992" tags="$:/tags/Stylesheet" title="StylesheetModifiedMaury" type="text/css">
 <pre>body.tc-body {
