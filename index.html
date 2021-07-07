@@ -190,11 +190,17 @@ Error message and password prompt
 
 <li>$:/SiteTitle</li>
 
+<li>$:/state/notebook-sidebar</li>
+
+<li>$:/state/notebook-sidebar-section</li>
+
 <li>$:/state/peek-stylesheets/open/--994748944$:/themes/tiddlywiki/snowwhite/base</li>
 
 <li>$:/state/peek-stylesheets/open/--994748944$:/themes/tiddlywiki/vanilla/base</li>
 
 <li>$:/state/peek-stylesheets/open/--994748944Custom data-styles</li>
+
+<li>$:/state/plugin-info--1802027394-$:/themes/nico/notebook---538834486</li>
 
 <li>$:/state/showeditpreview</li>
 
@@ -230,9 +236,13 @@ Error message and password prompt
 
 <li>$:/themes/nico/notebook</li>
 
+<li>$:/themes/nico/notebook/base</li>
+
 <li>$:/themes/tiddlywiki/snowwhite</li>
 
 <li>$:/themes/tiddlywiki/vanilla</li>
+
+<li>$:/themes/tiddlywiki/vanilla/metrics/lineheight</li>
 
 <li>$:/themes/tiddlywiki/vanilla/metrics/storyright</li>
 
@@ -10529,6 +10539,12 @@ very-muted-foreground: #888888</pre>
 <div created="20210706045806414" modified="20210706045810788" title="$:/SiteTitle">
 <pre>Knowledge</pre>
 </div>
+<div created="20210706234800883" modified="20210706235417195" title="$:/state/notebook-sidebar">
+<pre>yes</pre>
+</div>
+<div created="20210706235419546" modified="20210706235423591" title="$:/state/notebook-sidebar-section">
+<pre>$:/core/ui/SideBar/More</pre>
+</div>
 <div created="20210706055913456" modified="20210706055913456" title="$:/state/peek-stylesheets/open/--994748944$:/themes/tiddlywiki/snowwhite/base">
 <pre>yes</pre>
 </div>
@@ -10538,14 +10554,17 @@ very-muted-foreground: #888888</pre>
 <div created="20210706055948874" modified="20210706055948874" title="$:/state/peek-stylesheets/open/--994748944Custom data-styles">
 <pre>yes</pre>
 </div>
-<div created="20210706164159444" modified="20210706232522488" title="$:/state/showeditpreview">
+<div created="20210706235500332" modified="20210706235500332" title="$:/state/plugin-info--1802027394-$:/themes/nico/notebook---538834486">
+<pre>contents</pre>
+</div>
+<div created="20210706164159444" modified="20210707000302671" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
 <div created="20210706054630810" modified="20210706054631632" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Themes</pre>
 </div>
-<div created="20210706054313563" modified="20210706234158574" title="$:/state/tab--1963855381">
-<pre>$:/core/ui/ControlPanel/StoryView</pre>
+<div created="20210706054313563" modified="20210706235211559" title="$:/state/tab--1963855381">
+<pre>$:/themes/nico/notebook/themetweaks</pre>
 </div>
 <div created="20210706055707613" modified="20210706060115217" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Advanced</pre>
@@ -10553,14 +10572,14 @@ very-muted-foreground: #888888</pre>
 <div created="20210706055713269" modified="20210706060036915" title="$:/state/tab--959111941">
 <pre>$:/core/ui/ControlPanel/TiddlerFields</pre>
 </div>
-<div created="20210706045814375" modified="20210706234136636" title="$:/state/tab-1749438307">
+<div created="20210706045814375" modified="20210706235234965" title="$:/state/tab-1749438307">
 <pre>$:/core/ui/ControlPanel/Appearance</pre>
 </div>
 <div created="20210706045817168" modified="20210706060134668" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20210706055643975" modified="20210706060551137" title="$:/state/tab/moresidebar-1850697562">
-<pre>$:/core/ui/MoreSideBar/All</pre>
+<div created="20210706055643975" modified="20210706235432257" title="$:/state/tab/moresidebar-1850697562">
+<pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
 <div created="20210706054121314" modified="20210706060739296" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Recent</pre>
@@ -10577,7 +10596,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210706234129580" list="$:/ControlPanel KnowlEdge" modified="20210706234129580" title="$:/StoryList">
+<div created="20210706235440850" list="$:/themes/nico/notebook $:/themes/nico/notebook/base $:/SiteSubtitle $:/SiteTitle KnowlEdge" modified="20210706235611307" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210706234139991" title="$:/theme">
@@ -11022,6 +11041,639 @@ very-muted-foreground: #888888</pre>
     }
 }</pre>
 </div>
+<div created="20200419141443144" modified="20210707000308795" tags="$:/tags/Stylesheet" title="$:/themes/nico/notebook/base" type="text/vnd.tiddlywiki">
+<pre>\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline
+
+\define if-sidebar(text)
+  &lt;$reveal state=&quot;$:/state/notebook-sidebar&quot; type=&quot;match&quot; text=&quot;yes&quot;&gt;
+    $text$
+  &lt;/$reveal&gt;
+\end
+
+\define if-reveal-tiddler-controls-on-hover(text)
+  &lt;$reveal state=&quot;$:/themes/nico/notebook/options/reveal-tiddler-controls-on-hover&quot; type=&quot;match&quot; text=&quot;yes&quot;&gt;
+    $text$
+  &lt;/$reveal&gt;
+\end
+  
+/* Top and bottom bars */
+
+/* Hide the top-right bar */
+.tc-topbar.tc-topbar-right {
+  display: none;
+}
+
+div.tc-sidebar-header {
+  padding: 0;
+  min-height: 0;
+}
+
+.tc-story-river {
+  padding: 6px 0 !important;
+  width: 100% !important;
+  max-width: {{$:/themes/nico/notebook/metrics/story-width}} !important;
+  margin: 0 auto !important;
+  margin-top: 34px !important;
+}
+
+div.tc-tiddler-frame {
+  width: 100%;
+  margin: 20px 0;
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  box-shadow: 0 5px 20px rgba(0,0,0, 0.12);
+  border-radius: 6px;
+  padding: 42px 60px 60px 60px;
+}
+
+h1.tc-site-title {
+  margin-top: 14px;
+  font-size: 1.5em;
+}
+
+.nc-bar {
+  padding: 10px;
+  height: {{$:/themes/nico/notebook/metrics/topbar-height}};
+  background: &lt;&lt;colour page-background&gt;&gt;;
+  display: flex;
+  justify-content: space-between;
+}
+
+.nc-topbar-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  /* The z-index needs to be above the z-index used in tiddlers in zoomin view */
+  z-index: 501;
+}
+
+.nc-bar.nc-topbar {
+  top: 0;
+  background: &lt;&lt;colour page-background&gt;&gt;ee;
+  max-width: calc({{$:/themes/nico/notebook/metrics/story-width}} + 40px);
+  padding: 10px 20px;
+  margin: 0 auto;
+}
+
+.nc-bar.nc-bottombar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  /* The z-index needs to be above the z-index used in tiddlers in zoomin view */
+  z-index: 501;
+}
+
+.nc-bar .left svg {
+  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;
+}
+
+.nc-bar input[type=&quot;search&quot;] {
+  width: 200px;
+  padding: .6em 1em;
+  margin-top: -.2em;
+  background: &lt;&lt;colour sidebar-button-foreground&gt;&gt;44;
+  color: &lt;&lt;colour foreground&gt;&gt;cc;
+  transition: all ease-in .2s;
+  border: 1px solid transparent;
+  outline: 0;
+}
+
+.nc-bar input[type=&quot;search&quot;]:focus {
+  width: 300px;
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  color: &lt;&lt;colour foreground&gt;&gt;;
+  border: 1px solid &lt;&lt;colour primary&gt;&gt;;
+  box-shadow: 0 0 .2rem 0 &lt;&lt;colour primary&gt;&gt;;
+}
+
+input[type=&quot;search&quot;]::-webkit-search-cancel-button {
+  -webkit-appearance: auto;
+}
+
+.nc-bar .tc-block-dropdown.tc-search-drop-down {
+  margin-left: 0;
+  width: 400px;
+  border: 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,.2);
+  border-radius: 6px;
+  padding: 20px 0;
+}
+
+.nc-bar p {
+  margin: 0;
+}
+
+.nc-bar .tc-page-controls {
+  margin-top: 0;
+}
+
+.nc-bar .tc-page-controls button {
+  margin-right: .8em;
+}
+
+.nc-bar .tc-page-controls button .tc-btn-text {
+  font-size: 14px;
+}
+
+.nc-bar .tc-block-dropdown {
+  max-height: 70vh;
+  overflow: auto;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-topbar {
+    display: none;
+  }
+
+  .tc-story-river {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 60px !important;
+  }
+
+  div.tc-tiddler-frame {
+    margin: 0;
+    box-shadow: none;
+    border-radius: 0;
+    border-top: 0;
+  }
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-bottombar {
+    display: none;
+  }
+}
+
+@media(max-width: 1100px) {
+  .nc-bar input[type=&quot;search&quot;] {
+    width: 200px;
+  }
+}
+
+/* Sidebar */
+
+@keyframes sidebar-appear {
+  0%   {
+    left: -{{$:/themes/nico/notebook/metrics/sidebar-width}};
+  }
+  100% {
+    left: 0;
+  }
+}
+
+&lt;&lt;if-sidebar &quot;&quot;&quot;
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-sidebar {
+    animation: sidebar-appear .14s;
+    padding-top: 10px;
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+.nc-sidebar {
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  border-right: 1px solid &lt;&lt;colour tiddler-border&gt;&gt;;
+  width: {{$:/themes/nico/notebook/metrics/sidebar-width}};
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 500;
+}
+
+.nc-sidebar .segment {
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.nc-sidebar ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  line-height: 1.8em;
+}
+
+.nc-sidebar ol ol {
+  padding-left: 18px;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .mobile-only {
+    display: none;
+  }
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .desktop-only {
+    display: none;
+  }
+}
+
+.nc-sidebar h1.tc-site-title {
+  margin: 0;
+}
+
+.nc-sidebar p {
+  margin: 6px 0;
+}
+
+.nc-sidebar .tc-site-subtitle {
+  color: &lt;&lt;colour site-title-foreground&gt;&gt;;
+}
+
+.nc-sidebar .section .label {
+  padding: 2px 0;
+  color: &lt;&lt;colour site-title-foreground&gt;&gt;;
+  fill: &lt;&lt;colour site-title-foreground&gt;&gt;;
+  font-weight: bold;
+  line-height: 1.6em;
+  display: block;
+  width: 100%;
+  text-align: left;
+  padding: 8px 15px;
+  border-radius: 0;
+}
+
+.nc-sidebar .section:not(.open) .label:hover {
+  background: rgba(0,0,0,.06);
+}
+
+.nc-sidebar .section.open .label {
+  color: &lt;&lt;colour tiddler-background&gt;&gt;;
+  fill: &lt;&lt;colour tiddler-background&gt;&gt;;
+  background: &lt;&lt;colour primary&gt;&gt;;
+  border-bottom: 1px solid rgba(0,0,0,.1);
+}
+
+.nc-sidebar .section .label .caret {
+  display: inline-block;
+  width: 15px;
+  float: right;
+}
+
+.nc-sidebar .content {
+  padding: 6px 15px;
+  font-size: 1em;
+}
+
+.nc-sidebar .tc-tiddlylink {
+  color: &lt;&lt;colour primary&gt;&gt;;
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .nc-sidebar {
+    position: fixed;
+    left: 0;
+    top:  0;
+    bottom: 0;
+  }
+}
+
+&lt;&lt;if-sidebar &quot;&quot;&quot;
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  @keyframes sidebar-slide {
+    0%   {
+      left: -100vw;
+    }
+    100% {
+      left: 0;
+    }
+  }
+  .nc-sidebar {
+    overflow: auto;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    bottom: 48px;
+    z-index: 3000;
+    animation: sidebar-slide ease-in .2s;
+    animation-fill-mode: forwards;
+  }
+}
+
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-page-container {
+    margin-left: {{$:/themes/nico/notebook/metrics/sidebar-width}} !important;
+  }
+
+  .nc-topbar-wrapper {
+    left: {{$:/themes/nico/notebook/metrics/sidebar-width}};
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+/* Animate the hamburger button */
+
+@keyframes menu-bars-1 {
+  0%   {}
+  100% {
+    transform: rotate(-45deg) translateY(-10px) translateX(-6px);
+    fill: &lt;&lt;colour foreground&gt;&gt;;
+  }
+}
+
+@keyframes menu-bars-2 {
+  0%   {}
+  100% { opacity: 0; }
+}
+
+@keyframes menu-bars-3 {
+  0%   {}
+  100% {
+    transform: rotate(45deg) translateY(6px) translateX(2px);
+    fill: &lt;&lt;colour foreground&gt;&gt;;
+  }
+}
+
+.sidebar-toggle {
+  /* position: fixed; */
+  /* top: 6px; */
+  /* left: 6px; */
+  /* z-index: 600; */
+  /* padding: 4px; */
+  /* border-radius: 8px; */
+  margin-right: 10px;
+  transition: all ease-in-out .2s;
+  fill: &lt;&lt;colour sidebar-controls-foreground&gt;&gt;;
+}
+
+.sidebar-toggle:hover,
+.sidebar-toggle.open {
+  fill: &lt;&lt;colour sidebar-controls-foreground-hover&gt;&gt;;
+}
+
+/* @media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) { */
+/*   .sidebar-toggle { */
+/*     top: auto; */
+/*     bottom: 10px; */
+/*     left: 10px; */
+/*   } */
+/* } */
+
+.sidebar-toggle .bars .bar {
+    transform: rotate(0) translateY(0) translateX(0);
+    opacity: 1;
+    transform-origin: 20px 10px;
+    transition: transform 0.4s ease-in-out, opacity 0.2s ease-in-out, fill .4s ease-in-out;
+}
+
+.sidebar-toggle .bars .bar:nth-of-type(3) {
+    transform-origin: 20px 20px;
+}
+
+.sidebar-toggle.open .bars .bar:nth-of-type(1) {
+  animation: menu-bars-1 .6s;
+  animation-fill-mode: forwards;
+}
+.sidebar-toggle.open .bars .bar:nth-of-type(2) {
+  animation: menu-bars-2 .6s;
+  animation-fill-mode: forwards;
+}
+.sidebar-toggle.open .bars .bar:nth-of-type(3) {
+  animation: menu-bars-3 .6s;
+  animation-fill-mode: forwards;
+}
+
+@media (max-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  div.tc-tiddler-frame {
+    padding: 14px;
+  }
+}
+
+/* Inputs */
+
+input, textarea {
+  transition: border .14s ease-in-out;
+  background: &lt;&lt;colour tiddler-editor-background&gt;&gt;;
+  border: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+  padding: .5em;
+  border-radius: 4px;
+}
+
+input:focus, textarea:focus {
+  box-shadow: 0 0 0.2rem 0 &lt;&lt;colour primary&gt;&gt;;
+  outline: 0;
+  border-color: &lt;&lt;colour primary&gt;&gt;;
+}
+
+button {
+  border-radius: 1.5em;
+  border: 1px solid #ccc;
+  background: &lt;&lt;colour tiddler-background&gt;&gt;;
+  padding: .3em 1em;
+  cursor: pointer;
+  transition: box-shadow ease-in .1s;
+  color: &lt;&lt;color foreground&gt;&gt;;
+}
+
+button:focus, button:active {
+  outline: 0 none;
+}
+
+button.tc-btn-invisible {
+  border-radius: 0;
+}
+
+.tc-editor-toolbar button,
+.tc-editor-toolbar button.tc-btn-invisible {
+  border-radius: 3px;
+  background: &lt;&lt;colour tiddler-editor-background&gt;&gt;;
+  color: &lt;&lt;colour foreground&gt;&gt;;
+  fill: &lt;&lt;colour foreground&gt;&gt;;
+  border: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+}
+
+.tc-editor-toolbar button:hover,
+.tc-editor-toolbar button:active {
+  border-color: &lt;&lt;colour primary&gt;&gt;;
+  background: &lt;&lt;colour primary&gt;&gt;;
+  color: &lt;&lt;colour background&gt;&gt;;
+  fill: &lt;&lt;colour background&gt;&gt;;
+}
+
+.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
+  transition: border .14s ease-in-out;
+  border: 1px solid &lt;&lt;colour tiddler-editor-border&gt;&gt;;
+  background: &lt;&lt;colour tiddler-editor-background&gt;&gt;;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.tc-tiddler-frame input.tc-edit-texteditor:focus,
+.tc-tiddler-frame textarea.tc-edit-texteditor:focus,
+.tc-tiddler-frame iframe.tc-edit-texteditor:focus {
+  box-shadow: 0 0 0.2rem 0 &lt;&lt;colour primary&gt;&gt;;
+  outline: 0;
+  border-color: &lt;&lt;colour primary&gt;&gt;;
+}
+
+.tc-tiddler-controls .tc-btn-text {
+    font-size: 16px;
+}
+
+&lt;&lt;if-reveal-tiddler-controls-on-hover &quot;&quot;&quot;
+@media (min-width: {{$:/themes/tiddlywiki/vanilla/metrics/sidebarbreakpoint}}) {
+  .tc-tiddler-frame .tc-tiddler-controls svg {
+    opacity: 0;
+    transition: all .2s ease-in;
+  }
+
+  .tc-tiddler-controls svg.tc-image-close-button,
+  .tc-tiddler-controls .py-toggle-todo-button svg,
+  .tc-tiddler-controls svg.tc-image-done-button,
+  .tc-tiddler-frame .tc-tiddler-controls:hover svg {
+    opacity: 1;
+  }
+
+  .tc-tiddler-controls .py-toggle-todo-button .done svg {
+    fill: #2da562;
+  }
+}
+&quot;&quot;&quot;&gt;&gt;
+
+button.tc-tag-label, span.tc-tag-label {
+  padding: 0.3em 1em !important;
+}
+
+/* Fonts */
+
+html, body {
+  font-family: {{$:/themes/nico/notebook/settings/fontfamily}};
+}
+
+.tc-tiddler-frame input.tc-edit-texteditor,
+.tc-tiddler-frame textarea.tc-edit-texteditor,
+.tc-tiddler-frame iframe.tc-edit-texteditor {
+  font-family: {{$:/themes/nico/notebook/settings/editorfontfamily}};
+}
+
+pre, code {
+  font-family: {{$:/themes/nico/notebook/settings/codefontfamily}};
+}
+
+.tc-titlebar, .tc-site-title {
+  font-size: 28px !important;
+  line-height: 34px !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.5px !important;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+}
+
+.tc-tiddler-body h1,
+.tc-tiddler-body h2,
+.tc-tiddler-preview-preview h1,
+.tc-tiddler-preview-preview h2 {
+  font-weight: bold;
+}
+
+div.tc-tiddler-frame .tc-tiddler-body {
+  font-size: {{$:/themes/nico/notebook/metrics/bodyfontsize}};
+  line-height: {{$:/themes/nico/notebook/metrics/bodylineheight}};
+}
+
+/* Tabs */
+
+div.tc-tab-buttons {
+  margin-bottom: -4px;
+}
+
+div.tc-tab-buttons button {
+  font-weight: bold;
+  font-size: 1.2em;
+  line-height: 1em;
+  padding: .6em .8em .4em .8em;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  cursor: pointer;
+  transition: background ease-in .2s;
+}
+
+div.tc-tab-buttons button:hover {
+  background: rgba(0,0,0,.03);
+}
+
+div.tc-tab-buttons button.tc-tab-selected {
+  border: 0;
+  background: transparent;
+  border-bottom: 4px solid &lt;&lt;colour primary&gt;&gt;;
+}
+
+/* Dropdowns */
+
+@keyframes pop {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  80% {
+    transform: scale(1.03);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.tc-drop-down {
+  box-shadow: 0 0 10px rgba(0,0,0,.2);
+  border-radius: 6px;
+  padding: 10px 0 !important;
+  animation: pop .15s ease-in forwards;
+}
+
+.tc-drop-down a, .tc-drop-down button {
+  padding: 3px 15px !important;
+}
+
+.tc-search-results {
+  line-height: 2em;
+}
+
+.tc-search-results em {
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* Draft list */
+
+.tc-drafts-list {
+  font-size: .9em;
+  left: auto;
+  right: 0;
+}
+
+.tc-drafts-list a {
+  padding: 6px 12px;
+  font-weight: bold;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  display: inline-block;
+}
+
+.nc-refs {
+  color: #888;
+  font-size: .9em;
+}
+
+.nc-refs h4 {
+  margin-bottom: 4px;
+}
+
+.nc-post-created {
+  color: #acacac;
+  font-size: .8em;
+}
+</pre>
+</div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -11130,6 +11782,9 @@ very-muted-foreground: #888888</pre>
         }
     }
 }</pre>
+</div>
+<div created="20210706235249410" modified="20210706235251085" title="$:/themes/tiddlywiki/vanilla/metrics/lineheight">
+<pre>15px</pre>
 </div>
 <div created="20210706060340672" modified="20210706060518067" title="$:/themes/tiddlywiki/vanilla/metrics/storyright">
 <pre>880px</pre>
