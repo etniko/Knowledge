@@ -10851,10 +10851,10 @@ very-muted-foreground: #888888</pre>
 <div created="20210707221703612" modified="20210707221703612" title="$:/state/plugin-info--896887961-$:/plugins/nico/notebook-mobile">
 <pre>yes</pre>
 </div>
-<div created="20210706164159444" modified="20210708163707770" title="$:/state/showeditpreview">
+<div created="20210706164159444" modified="20210708173436660" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210707230755894" modified="20210708152534529" title="$:/state/sidebar">
+<div created="20210707230755894" modified="20210708173356444" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210706054630810" modified="20210706054631632" title="$:/state/tab--1418380610">
@@ -10881,11 +10881,11 @@ very-muted-foreground: #888888</pre>
 <div created="20210706045817168" modified="20210706060134668" title="$:/state/tab-2065006209">
 <pre>$:/core/ui/ControlPanel/Saving/General</pre>
 </div>
-<div created="20210706055643975" modified="20210708160847397" title="$:/state/tab/moresidebar-1850697562">
+<div created="20210706055643975" modified="20210708172922829" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Shadows</pre>
 </div>
-<div created="20210706054121314" modified="20210708165431630" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Tools</pre>
+<div created="20210706054121314" modified="20210708172902302" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/More</pre>
 </div>
 <div created="20210708061319827" modified="20210708155321900" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -10902,7 +10902,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210708165702724" list="$:/Import KnowlEdge [[Artificial Intelligence]]" modified="20210708165702724" title="$:/StoryList">
+<div created="20210708173226443" list="KnowlEdge About" modified="20210708173226443" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -11809,8 +11809,8 @@ div.tc-tab-buttons button.tc-tab-selected {
 <div created="20210706054315557" modified="20210707231530552" title="$:/view">
 <pre>zoomin</pre>
 </div>
-<div created="20140912145139340" modified="20210708163850165" tags="TableOfContents" title="About" type="text/vnd.tiddlywiki">
-<pre>&lt;&lt;--- Home Button --&gt;&gt;
+<div created="20140912145139340" modified="20210708173439130" tags="TableOfContents" title="About" type="text/vnd.tiddlywiki">
+<pre>&lt;&lt;--- Home Button ---&gt;&gt;
 &lt;$button message=&quot;tm-home&quot; tooltip={{$:/language/Buttons/Home/Hint}} aria-label={{$:/language/Buttons/Home/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
 {{$:/core/images/home-button}}
@@ -11819,6 +11819,15 @@ div.tc-tab-buttons button.tc-tab-selected {
 &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/Home/Caption}}/&gt;&lt;/span&gt;
 &lt;/$list&gt;
 &lt;/$button&gt;
+&lt;&lt;---Home Button end ---&gt;&gt;
+&lt;&lt;--- Toggle Sidebar ---&gt;&gt;
+&lt;$list filter=&quot;[[$:/state/sidebar]get[text]] +[else[yes]!match[no]]&quot; variable=&quot;ignore&quot;&gt;
+&lt;$button set=&quot;$:/state/sidebar&quot; setTo=&quot;no&quot; tooltip={{$:/language/Buttons/HideSideBar/Hint}} aria-label={{$:/language/Buttons/HideSideBar/Caption}} class=&quot;tc-btn-invisible tc-hide-sidebar-btn&quot;&gt;{{$:/core/images/chevron-right}}&lt;/$button&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/sidebar]get[text]] +[else[yes]match[no]]&quot; variable=&quot;ignore&quot;&gt;
+&lt;$button set=&quot;$:/state/sidebar&quot; setTo=&quot;yes&quot; tooltip={{$:/language/Buttons/ShowSideBar/Hint}} aria-label={{$:/language/Buttons/ShowSideBar/Caption}} class=&quot;tc-btn-invisible tc-show-sidebar-btn&quot;&gt;{{$:/core/images/chevron-left}}&lt;/$button&gt;
+&lt;/$list&gt;
+&lt;&lt;--Toggle Sidebar ends --&gt;&gt;
 
 The world's economy actors need to consider and value the natural assets in all its process. Is up to us how well and how soon we embed it in our business plans, financial statements, accounting standard methods, investments, trade and statistical and demographic measures and how we use technology to attain such goals.
 
