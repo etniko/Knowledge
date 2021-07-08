@@ -198,6 +198,8 @@ Error message and password prompt
 
 <li>$:/palette</li>
 
+<li>$:/PaletteManager</li>
+
 <li>$:/palettes/Blanca Orange</li>
 
 <li>$:/plugins/nico/notebook-mobile</li>
@@ -10390,11 +10392,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/core/ui/SideBar/Open]]
-# [[TableOfContents]]
-# [[$:/core/ui/SideBar/Recent]]
-# [[$:/core/ui/SideBar/Tools]]
-# [[$:/core/ui/SideBar/More]]</pre>
+# [[$:/PaletteManager]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10404,6 +10402,100 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 </div>
 <div created="20210706055412183" modified="20210706055412183" title="$:/palette">
 <pre>$:/palettes/Blanca</pre>
+</div>
+<div title="$:/PaletteManager">
+<pre>\define lingo-base() $:/language/ControlPanel/Palette/Editor/
+\define describePaletteColour(colour)
+&lt;$transclude tiddler=&quot;$:/language/Docs/PaletteColours/$colour$&quot;&gt;&lt;$text text=&quot;$colour$&quot;/&gt;&lt;/$transclude&gt;
+\end
+\define edit-colour-placeholder()
+ edit $(colourName)$
+\end
+\define colour-tooltip(showhide) $showhide$ editor for $(newColourName)$ 
+\define resolve-colour(macrocall)
+\import $:/core/macros/utils
+\whitespace trim
+&lt;$wikify name=&quot;name&quot; text=&quot;&quot;&quot;$macrocall$&quot;&quot;&quot;&gt;
+&lt;&lt;name&gt;&gt;
+&lt;/$wikify&gt;
+\end
+\define delete-colour-index-actions() &lt;$action-setfield $index=&lt;&lt;colourName&gt;&gt;/&gt;
+\define palette-manager-colour-row-segment()
+\whitespace trim
+&lt;$edit-text index=&lt;&lt;colourName&gt;&gt; tag=&quot;input&quot; placeholder=&lt;&lt;edit-colour-placeholder&gt;&gt; default=&quot;&quot;/&gt;
+&lt;br&gt;
+&lt;$edit-text index=&lt;&lt;colourName&gt;&gt; type=&quot;color&quot; tag=&quot;input&quot; class=&quot;tc-palette-manager-colour-input&quot;/&gt;
+&lt;$list filter=&quot;[&lt;currentTiddler&gt;getindex&lt;colourName&gt;removeprefix[&lt;&lt;]removesuffix[&gt;&gt;]] [&lt;currentTiddler&gt;getindex&lt;colourName&gt;removeprefix[&lt;$]removesuffix[/&gt;]]&quot; variable=&quot;ignore&quot;&gt;
+&lt;$set name=&quot;state&quot; value={{{ [[$:/state/palettemanager/]addsuffix&lt;currentTiddler&gt;addsuffix[/]addsuffix&lt;colourName&gt;] }}}&gt;
+&lt;$wikify name=&quot;newColourName&quot; text=&quot;&quot;&quot;&lt;$macrocall $name=&quot;resolve-colour&quot; macrocall={{{ [&lt;currentTiddler&gt;getindex&lt;colourName&gt;] }}}/&gt;&quot;&quot;&quot;&gt;
+&lt;$reveal state=&lt;&lt;state&gt;&gt; type=&quot;nomatch&quot; text=&quot;show&quot;&gt;
+&lt;$button tooltip=&lt;&lt;colour-tooltip show&gt;&gt; aria-label=&lt;&lt;colour-tooltip show&gt;&gt; class=&quot;tc-btn-invisible&quot; set=&lt;&lt;state&gt;&gt; setTo=&quot;show&quot;&gt;{{$:/core/images/down-arrow}}&lt;$text text=&lt;&lt;newColourName&gt;&gt; class=&quot;tc-small-gap-left&quot;/&gt;&lt;/$button&gt;&lt;br&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;state&gt;&gt; type=&quot;match&quot; text=&quot;show&quot;&gt;
+&lt;$button tooltip=&lt;&lt;colour-tooltip hide&gt;&gt; aria-label=&lt;&lt;colour-tooltip show&gt;&gt; class=&quot;tc-btn-invisible&quot; actions=&quot;&quot;&quot;&lt;$action-deletetiddler $tiddler=&lt;&lt;state&gt;&gt;/&gt;&quot;&quot;&quot;&gt;{{$:/core/images/up-arrow}}&lt;$text text=&lt;&lt;newColourName&gt;&gt; class=&quot;tc-small-gap-left&quot;/&gt;&lt;/$button&gt;&lt;br&gt;
+&lt;/$reveal&gt;
+&lt;$reveal state=&lt;&lt;state&gt;&gt; type=&quot;match&quot; text=&quot;show&quot;&gt;
+&lt;$set name=&quot;colourName&quot; value=&lt;&lt;newColourName&gt;&gt;&gt;
+&lt;br&gt;
+&lt;&lt;palette-manager-colour-row-segment&gt;&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;/$set&gt;
+&lt;/$reveal&gt;
+&lt;/$wikify&gt;
+&lt;/$set&gt;
+&lt;/$list&gt;
+\end
+\define palette-manager-colour-row()
+\whitespace trim
+&lt;tr&gt;
+&lt;td&gt;
+&lt;span style=&quot;float:right;&quot;&gt;
+&lt;$button tooltip={{$:/language/ControlPanel/Palette/Editor/Delete/Hint}} aria-label=&lt;&lt;lingo Delete/Hint&gt;&gt; class=&quot;tc-btn-invisible&quot; actions=&lt;&lt;delete-colour-index-actions&gt;&gt;&gt;
+{{$:/core/images/delete-button}}&lt;/$button&gt;
+&lt;/span&gt;
+''&lt;$macrocall $name=&quot;describePaletteColour&quot; colour=&lt;&lt;colourName&gt;&gt;/&gt;''&lt;br/&gt;
+&lt;$macrocall $name=&quot;colourName&quot; $output=&quot;text/plain&quot;/&gt;
+&lt;/td&gt;
+&lt;td&gt;
+&lt;&lt;palette-manager-colour-row-segment&gt;&gt;
+&lt;/td&gt;
+&lt;/tr&gt;
+\end
+\define palette-manager-table()
+\whitespace trim
+&lt;table&gt;
+&lt;tbody&gt;
+&lt;$list filter=&quot;[all[shadows+tiddlers]tag[$:/tags/Palette]indexes[]]&quot; variable=&quot;colourName&quot;&gt;
+&lt;$list filter=&quot;[&lt;currentTiddler&gt;indexes[]removeprefix&lt;colourName&gt;suffix[]]&quot; variable=&quot;ignore&quot; emptyMessage=&quot;&quot;&quot;
+&lt;$list filter=&quot;[{$:/state/palettemanager/showexternal}removeprefix[yes]suffix[]]&quot; variable=&quot;ignore&quot;&gt;
+&lt;&lt;palette-manager-colour-row&gt;&gt;
+&lt;/$list&gt;
+&quot;&quot;&quot;&gt;
+&lt;&lt;palette-manager-colour-row&gt;&gt;
+&lt;/$list&gt;
+&lt;/$list&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+\end
+&lt;$set name=&quot;currentTiddler&quot; value={{$:/palette}}&gt;
+
+&lt;&lt;lingo Prompt&gt;&gt; &lt;$link to={{$:/palette}}&gt;&lt;$macrocall $name=&quot;currentTiddler&quot; $output=&quot;text/plain&quot;/&gt;&lt;/$link&gt;
+
+&lt;$list filter=&quot;[all[current]is[shadow]is[tiddler]]&quot; variable=&quot;listItem&quot;&gt;
+&lt;&lt;lingo Prompt/Modified&gt;&gt;
+&lt;$button message=&quot;tm-delete-tiddler&quot; param={{$:/palette}}&gt;&lt;&lt;lingo Reset/Caption&gt;&gt;&lt;/$button&gt;
+&lt;/$list&gt;
+
+&lt;$list filter=&quot;[all[current]is[shadow]!is[tiddler]]&quot; variable=&quot;listItem&quot;&gt;
+&lt;&lt;lingo Clone/Prompt&gt;&gt;
+&lt;/$list&gt;
+
+&lt;$button message=&quot;tm-new-tiddler&quot; param={{$:/palette}}&gt;&lt;&lt;lingo Clone/Caption&gt;&gt;&lt;/$button&gt;
+
+&lt;$checkbox tiddler=&quot;$:/state/palettemanager/showexternal&quot; field=&quot;text&quot; checked=&quot;yes&quot; unchecked=&quot;no&quot;&gt;&lt;span class=&quot;tc-small-gap-left&quot;&gt;&lt;&lt;lingo Names/External/Show&gt;&gt;&lt;/span&gt;&lt;/$checkbox&gt;
+
+&lt;&lt;palette-manager-table&gt;&gt;
+</pre>
 </div>
 <div created="20210704020637692" description="A clean white palette to let you focus" modified="20210704021703471" name="Blanca" tags="$:/tags/Palette" title="$:/palettes/Blanca Orange" type="application/x-tiddler-dictionary">
 <pre>alert-background: #ffe476
@@ -10793,7 +10885,7 @@ very-muted-foreground: #888888</pre>
 <div created="20210706055643975" modified="20210708152451736" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20210706054121314" modified="20210708153715739" title="$:/state/tab/sidebar--595412856">
+<div created="20210706054121314" modified="20210708154203097" title="$:/state/tab/sidebar--595412856">
 <pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div created="20210708061319827" modified="20210708061447579" title="$:/state/tabs/controlpanel/toolbars-1345989671">
