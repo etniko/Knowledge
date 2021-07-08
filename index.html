@@ -10854,7 +10854,7 @@ very-muted-foreground: #888888</pre>
 <div created="20210706164159444" modified="20210708173436660" title="$:/state/showeditpreview">
 <pre>no</pre>
 </div>
-<div created="20210707230755894" modified="20210708173356444" title="$:/state/sidebar">
+<div created="20210707230755894" modified="20210708173545967" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210706054630810" modified="20210706054631632" title="$:/state/tab--1418380610">
@@ -10884,8 +10884,8 @@ very-muted-foreground: #888888</pre>
 <div created="20210706055643975" modified="20210708172922829" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/Shadows</pre>
 </div>
-<div created="20210706054121314" modified="20210708172902302" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/More</pre>
+<div created="20210706054121314" modified="20210708173453524" title="$:/state/tab/sidebar--595412856">
+<pre>TableOfContents</pre>
 </div>
 <div created="20210708061319827" modified="20210708155321900" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/EditorToolbar</pre>
@@ -10902,7 +10902,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210708173226443" list="KnowlEdge About" modified="20210708173226443" title="$:/StoryList">
+<div created="20210708173601373" list="KnowlEdge [[Economics Menu]]" modified="20210708173601373" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -11950,8 +11950,19 @@ Source, title; link if is article, paper, column, book, by author's name, date o
 ---
 ^^Source, [[Forbes magazine|https://www.forbes.com/sites/bernardmarr/2018/10/01/what-is-deep-learning-ai-a-simple-guide-with-8-practical-examples/?sh=299f67d68d4b]] article by Bernard Marr, Oct 10, 2018. Retrieved June 25, 2021.^^</pre>
 </div>
-<div created="20210706164745437" modified="20210706164813900" tags="" title="Economics Menu">
-<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+<div created="20210706164745437" modified="20210708173617271" tags="" title="Economics Menu">
+<pre>&lt;&lt;--- Home Button ---&gt;&gt;
+&lt;$button message=&quot;tm-home&quot; tooltip={{$:/language/Buttons/Home/Hint}} aria-label={{$:/language/Buttons/Home/Caption}} class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{$:/core/images/home-button}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text={{$:/language/Buttons/Home/Caption}}/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+&lt;&lt;---Home Button end ---&gt;&gt;
+
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-expandable &quot;Economics-treemenu&quot;&gt;&gt;
 &lt;/div&gt;</pre>
 </div>
