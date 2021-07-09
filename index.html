@@ -202,6 +202,8 @@ Error message and password prompt
 
 <li>$:/layout</li>
 
+<li>$:/MobileSidebarCSS</li>
+
 <li>$:/palette</li>
 
 <li>$:/PaletteManager</li>
@@ -10440,13 +10442,63 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/tiddlywiki/menubar]]</pre>
+# [[$:/MobileSidebarCSS]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
 <div created="20210706055748376" modified="20210709050307483" title="$:/layout">
 <pre>$:/core/ui/PageTemplate</pre>
+</div>
+<div created="20191012175013603" creator="Scott Kingery" modified="20191203061238634" modifier="Scott Kingery" tags="$:/tags/Stylesheet" title="$:/MobileSidebarCSS" type="text/css">
+<pre>/*! CSS to adjust what is visible in the Sidebar when the screen size changes */
+
+/*! A mobile screen in portrait mode (&lt; 400px) will show the Title, subtitle of the wiki, and the page controls like New Tiddler and the Save button */
+/*!* At 550px we add the search box and adjust it to show search results on the screen by pushing down tiddlers. With out this adjustment the search results push under the tiddlers on a small screen */
+/*!* At 750px and above we add all the sidebar tabs and set things back to standard */
+/* Media Queries
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.tc-sidebar-lists.tc-sidebar-tabs  { 
+	display: none;}
+.tc-sidebar-lists.tc-sidebar-search {
+	display: none;}
+.tc-page-controls {
+	display: none;}
+.tc-topbar.tc-topbar-right {
+	display: none;}
+
+/* Larger than mobile */
+@media (min-width: 300px) {
+  .tc-page-controls {
+	display: block;}
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+  .tc-sidebar-lists.tc-sidebar-search {
+	display: block;}
+  .tc-block-dropdown {
+      position: relative;}
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+  .tc-sidebar-lists.tc-sidebar-tabs  { 
+	display: block;}
+  .tc-topbar.tc-topbar-right {
+	display: block;}
+  .tc-block-dropdown {
+      position: absolute;}
+}
+
+/* Larger than desktop */
+@media (min-width: 1000px) {}
+
+/* Larger than Desktop HD */
+@media (min-width: 1200px) {}
+
+}</pre>
 </div>
 <div created="20210706055412183" modified="20210709051224519" title="$:/palette">
 <pre>$:/palettes/Blanca Orange</pre>
@@ -11116,7 +11168,7 @@ very-muted-foreground: #888888</pre>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210709172514151" list="$:/ControlPanel $:/themes/tiddlywiki/vanilla/base KnowlEdge" modified="20210709172739394" title="$:/StoryList">
+<div created="20210709172514151" list="$:/Import $:/ControlPanel $:/themes/tiddlywiki/vanilla/base KnowlEdge" modified="20210709172739394" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
