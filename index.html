@@ -176,6 +176,8 @@ Error message and password prompt
 
 <li>$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar</li>
 
+<li>$:/config/RelinkOnRename</li>
+
 <li>$:/config/Toolbar/ButtonClass</li>
 
 <li>$:/config/WikiParserRules/Block/styleblock</li>
@@ -203,8 +205,6 @@ Error message and password prompt
 <li>$:/GitHub/Repo</li>
 
 <li>$:/GitHub/Username</li>
-
-<li>$:/Import</li>
 
 <li>$:/isEncrypted</li>
 
@@ -446,8 +446,6 @@ Error message and password prompt
 
 <li>Natural assets</li>
 
-<li>New Tiddler</li>
-
 <li>No Poverty</li>
 
 <li>Paris Accord</li>
@@ -467,6 +465,8 @@ Error message and password prompt
 <li>Sustainable Economy</li>
 
 <li>Sustainable Macroeconomic Perspectives</li>
+
+<li>Symbol paragraph</li>
 
 <li>TableOfContents</li>
 
@@ -519,6 +519,9 @@ Error message and password prompt
 </div>
 <div created="20210717051310992" modified="20210717051318952" title="$:/config/plugins/menubar/MenuItems/Visibility/$:/plugins/tiddlywiki/menubar/items/sidebar">
 <pre>hide</pre>
+</div>
+<div created="20210718053948505" modified="20210718053948505" title="$:/config/RelinkOnRename">
+<pre>yes</pre>
 </div>
 <div created="20210709042030697" modified="20210709042050992" title="$:/config/Toolbar/ButtonClass">
 <pre>tc-btn-invisible</pre>
@@ -10495,11 +10498,6 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div created="20210706045839234" modified="20210706045841298" title="$:/GitHub/Username">
 <pre>etniko</pre>
 </div>
-<div status="complete" title="$:/Import">
-<pre>The following tiddlers were imported:
-
-# [[$:/MobileSidebarCSS]]</pre>
-</div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
@@ -11508,7 +11506,7 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210718043915565" list="KnowlEdge About [[AI and sustainability]] [[Sustainable Economy]] [[Fit for 55]] [[New Tiddler]]" modified="20210718044157383" title="$:/StoryList">
+<div created="20210718043915565" list="KnowlEdge About [[AI and sustainability]] [[Sustainable Economy]] [[Fit for 55]] [[Symbol paragraph]]" modified="20210718044157383" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -15717,19 +15715,6 @@ height=&quot;500&quot;&gt;
 <div created="20201220053051811" modified="20201220053241396" tags="[[Big Challenges]]" title="Natural assets">
 <pre>The depletion of natural capital, is a catastrophe that erodes the the possibilities of a healthy macroeconomic development. </pre>
 </div>
-<div caption="Parragraph symbol" created="20210718050553027" modified="20210718051042328" tags="$:/tags/TextEditor/Snippet" title="New Tiddler" type="">
-<pre>
-&lt;style&gt;
-.center {
-  margin: auto;
-  width: 50%;
-  padding: 10px;
-}
-&lt;/style&gt;
-&lt;div class=&quot;center&quot;&gt;
-  &lt;p&gt;※※※&lt;/p&gt;
-&lt;/div&gt;</pre>
-</div>
 <div created="20210706232351024" modified="20210706232710962" title="No Poverty">
 <pre>Poverty has been declining since the 1990's, still, according to the United Nations, almost half of the world's population lives in poverty. The aim is to eradicate poverty by 2030, is no easy task.
 
@@ -15871,6 +15856,11 @@ United Nations' [[Sustainable Development Goals]] | [[Sustainable Macroeconomic 
 !!!Organizations
 [[United Nations|http://www.un.org]]
 </pre>
+</div>
+<div caption="Paragraph symbol" created="20210718050553027" modified="20210718053951011" tags="$:/tags/TextEditor/Snippet" title="Symbol paragraph" type="">
+<pre>@@text-align:center;
+※※※
+@@</pre>
 </div>
 <div caption="{{$:/language/SideBar/Contents/Caption}}" created="20140809114010378" list="HelloThere Learning [[Working with TiddlyWiki]] [[Customise TiddlyWiki]] Features Languages Editions Plugins Platforms Reference Community About" list-after="$:/core/ui/SideBar/Open" modified="20210708163819880" tags="$:/tags/SideBar" title="TableOfContents" type="text/vnd.tiddlywiki">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
