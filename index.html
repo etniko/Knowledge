@@ -322,9 +322,13 @@ Error message and password prompt
 
 <li>$:/state/tabs/controlpanel/toolbars-1345989671</li>
 
+<li>$:/state/toc/Ai-treemenu-Artificial Intelligence--350119268</li>
+
 <li>$:/state/toc/Ai-treemenu-Artificial Intelligence--494038109</li>
 
 <li>$:/state/toc/Ai-treemenu-Artificial Intelligence--957580203</li>
+
+<li>$:/state/toc/Ai-treemenu-Artificial Intelligence-297353709</li>
 
 <li>$:/state/toc/Ai-treemenu/Artificial Intelligence-Mapmenu Artificial Intelligence--957580203</li>
 
@@ -411,6 +415,10 @@ Error message and password prompt
 <li>Custom data-styles</li>
 
 <li>Deep Learning</li>
+
+<li>Draft of 'AI Menu'</li>
+
+<li>Draft of 'New Tiddler'</li>
 
 <li>Economics Menu</li>
 
@@ -11497,11 +11505,17 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210708061319827" modified="20210717194158028" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
 </div>
+<div created="20210722023129607" modified="20210722023131922" title="$:/state/toc/Ai-treemenu-Artificial Intelligence--350119268">
+<pre>close</pre>
+</div>
 <div created="20210722022403238" modified="20210722022405242" title="$:/state/toc/Ai-treemenu-Artificial Intelligence--494038109">
 <pre>close</pre>
 </div>
 <div created="20210706164307248" modified="20210706164307248" title="$:/state/toc/Ai-treemenu-Artificial Intelligence--957580203">
 <pre>open</pre>
+</div>
+<div created="20210722023325774" modified="20210722023327805" title="$:/state/toc/Ai-treemenu-Artificial Intelligence-297353709">
+<pre>close</pre>
 </div>
 <div created="20210722021459156" modified="20210722021459156" title="$:/state/toc/Ai-treemenu/Artificial Intelligence-Mapmenu Artificial Intelligence--957580203">
 <pre>open</pre>
@@ -11536,7 +11550,7 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722021442035" list="$:/Import MenuMore KnowlEdge [[Artificial Intelligence]] [[AI Menu]]" modified="20210722022602983" title="$:/StoryList">
+<div created="20210722021442035" list="[[Draft of 'New Tiddler']] $:/Import MenuMore KnowlEdge [[Artificial Intelligence]] [[Draft of 'AI Menu']]" modified="20210722022602983" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -15558,6 +15572,33 @@ Source, title; link if is article, paper, column, book, by author's name, date o
 ---
 ^^Source, [[Forbes magazine|https://www.forbes.com/sites/bernardmarr/2018/10/01/what-is-deep-learning-ai-a-simple-guide-with-8-practical-examples/?sh=299f67d68d4b]] article by Bernard Marr, Oct 10, 2018. Retrieved June 25, 2021.^^</pre>
 </div>
+<div created="20210701183946429" draft.of="AI Menu" draft.title="AI Menu" modified="20210722023531051" tags="$:/tags/ViewToolbar" title="Draft of 'AI Menu'">
+<pre>\define newHereButtonTags()
+[[$(currentTiddler)$]]
+\end
+\define newHereButton()
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-sendmessage
+  $message=&quot;tm-new-tiddler&quot;
+$param=&quot;BUTTON&quot;
+title=&quot;New tiddler&quot;
+  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{TITLE OF YOUR SVG IMAGE TIDDLER}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;AI Menu&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+\end
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+&lt;&lt;toc-expandable &quot;Ai-treemenu&quot;&gt;&gt;
+&lt;/div&gt;
+</pre>
+</div>
+<div created="20210722023557599" draft.of="New Tiddler" draft.title="MEnu" modified="20210722023600852" tags="" title="Draft of 'New Tiddler'">
+<pre></pre>
+</div>
 <div created="20210706164745437" modified="20210709172018252" tags="" title="Economics Menu">
 <pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-expandable &quot;Economics-treemenu&quot;&gt;&gt;
@@ -15718,7 +15759,7 @@ width=&quot;100%&quot;
 height=&quot;500&quot;&gt;
 &lt;/iframe&gt;</pre>
 </div>
-<div created="20210722022610659" modified="20210722022658245" title="MenuMore">
+<div created="20210722022610659" modified="20210722023611878" title="MenuMore">
 <pre>&lt;i class=&quot;fi-rr-add&quot;&gt;&lt;/i&gt;</pre>
 </div>
 <div created="20210706164936794" modified="20210718043854033" tags="Economics-treemenu" title="microeconomics">
