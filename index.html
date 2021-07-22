@@ -416,8 +416,6 @@ Error message and password prompt
 
 <li>Deep Learning</li>
 
-<li>Draft of 'AI Menu'</li>
-
 <li>Draft of 'New Tiddler'</li>
 
 <li>Economics Menu</li>
@@ -11460,7 +11458,7 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210709040132173" modified="20210709050947687" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20210706164159444" modified="20210722022650621" title="$:/state/showeditpreview">
+<div created="20210706164159444" modified="20210722023635124" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
@@ -11550,7 +11548,7 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722021442035" list="[[Draft of 'New Tiddler']] $:/Import MenuMore KnowlEdge [[Artificial Intelligence]] [[Draft of 'AI Menu']]" modified="20210722022602983" title="$:/StoryList">
+<div created="20210722021442035" list="[[Draft of 'New Tiddler']] $:/Import MenuMore KnowlEdge [[Artificial Intelligence]] [[AI Menu]]" modified="20210722022602983" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -15461,10 +15459,29 @@ Studies suggests that AI impacts in sustainability could be positive and negativ
 
 [[Nature|https://www.nature.com/articles/s41467-019-14108-y#ref-CR5]]^^</pre>
 </div>
-<div created="20210701183946429" modified="20210722022358748" tags="$:/tags/ViewToolbar" title="AI Menu">
-<pre>&lt;div class=&quot;tc-table-of-contents&quot;&gt;
+<div created="20210701183946429" modified="20210722023650434" tags="$:/tags/ViewToolbar" title="AI Menu">
+<pre>\define newHereButtonTags()
+[[$(currentTiddler)$]]
+\end
+\define newHereButton()
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-sendmessage
+  $message=&quot;tm-new-tiddler&quot;
+$param=&quot;MenuMore&quot;
+title=&quot;New tiddler&quot;
+  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{MenuMore}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;AI Menu&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+\end
+&lt;div class=&quot;tc-table-of-contents&quot;&gt;
 &lt;&lt;toc-expandable &quot;Ai-treemenu&quot;&gt;&gt;
-&lt;/div&gt;</pre>
+&lt;/div&gt;
+</pre>
 </div>
 <div created="20210706153327718" modified="20210706153942806" tags="" title="articles 06Jul2021">
 <pre>https://www.scientificamerican.com/article/ai-designs-quantum-physics-experiments-beyond-what-any-human-has-conceived/?utm_source=pocket-newtab 
@@ -15571,30 +15588,6 @@ Source, title; link if is article, paper, column, book, by author's name, date o
 
 ---
 ^^Source, [[Forbes magazine|https://www.forbes.com/sites/bernardmarr/2018/10/01/what-is-deep-learning-ai-a-simple-guide-with-8-practical-examples/?sh=299f67d68d4b]] article by Bernard Marr, Oct 10, 2018. Retrieved June 25, 2021.^^</pre>
-</div>
-<div created="20210701183946429" draft.of="AI Menu" draft.title="AI Menu" modified="20210722023531051" tags="$:/tags/ViewToolbar" title="Draft of 'AI Menu'">
-<pre>\define newHereButtonTags()
-[[$(currentTiddler)$]]
-\end
-\define newHereButton()
-&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
-&lt;$action-sendmessage
-  $message=&quot;tm-new-tiddler&quot;
-$param=&quot;BUTTON&quot;
-title=&quot;New tiddler&quot;
-  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{TITLE OF YOUR SVG IMAGE TIDDLER}}
-&lt;/$list&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;AI Menu&quot;/&gt;&lt;/span&gt;
-&lt;/$list&gt;
-&lt;/$button&gt;
-\end
-&lt;div class=&quot;tc-table-of-contents&quot;&gt;
-&lt;&lt;toc-expandable &quot;Ai-treemenu&quot;&gt;&gt;
-&lt;/div&gt;
-</pre>
 </div>
 <div created="20210722023557599" draft.of="New Tiddler" draft.title="MEnu" modified="20210722023600852" tags="" title="Draft of 'New Tiddler'">
 <pre></pre>
