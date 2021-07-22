@@ -234,6 +234,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/menubar</li>
 
+<li>$:/plugins/tiddlywiki/menubar/items/hamburger</li>
+
 <li>$:/plugins/tiddlywiki/share</li>
 
 <li>$:/plugins/tiddlywiki/twitter</li>
@@ -459,8 +461,6 @@ Error message and password prompt
 <li>macroeconomics</li>
 
 <li>Mapmenu Artificial Intelligence</li>
-
-<li>MenuMore</li>
 
 <li>microeconomics</li>
 
@@ -11204,6 +11204,19 @@ wikilist-button-remove-hover: #B48EAD
     }
 }</pre>
 </div>
+<div caption="Hamburger" created="20210722044300868" custom-menu-content="{{$:/plugins/tiddlywiki/menubar/items/hamburger}}" description="Show the full menu bar on a narrow screen" modified="20210722044309404" show-when="narrow" tags="$:/tags/MenuBar $:/tags/ViewToolbar" title="$:/plugins/tiddlywiki/menubar/items/hamburger">
+<pre>&lt;$list filter=&quot;[[$:/state/popup/menubar/hamburger]get[text]else[no]match[no]]&quot;&gt;
+&lt;$button set=&quot;$:/state/popup/menubar/hamburger&quot; setTo=&quot;yes&quot;&gt;
+{{$:/core/images/menu-button}}
+&lt;/$button&gt;
+&lt;/$list&gt;
+&lt;$list filter=&quot;[[$:/state/popup/menubar/hamburger]get[text]else[no]match[yes]]&quot;&gt;
+&lt;$button set=&quot;$:/state/popup/menubar/hamburger&quot; setTo=&quot;no&quot;&gt;
+{{$:/core/images/close-button}}
+&lt;/$button&gt;
+&lt;/$list&gt;
+</pre>
+</div>
 <div dependents="" description="Sharing tiddlers via URLs" list="readme wizard settings" name="Share" plugin-type="plugin" title="$:/plugins/tiddlywiki/share" type="application/json" version="5.1.23">
 <pre>{
     &quot;tiddlers&quot;: {
@@ -11389,8 +11402,8 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210706045806414" modified="20210709051307335" title="$:/SiteTitle">
 <pre>KnowlEdge</pre>
 </div>
-<div created="20210709042557255" modified="20210722042417160" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210709042557255" modified="20210722044202991" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
 <div created="20210708060130272" modified="20210708060151165" title="$:/state/dropdown/keyboardshortcut/toggle-sidebar-286565879">
 <pre>close</pre>
@@ -11479,17 +11492,17 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210707230755894" modified="20210718044602614" title="$:/state/sidebar">
+<div created="20210707230755894" modified="20210722044233528" title="$:/state/sidebar">
 <pre>yes</pre>
 </div>
 <div created="20210706054630810" modified="20210717043635721" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210709042557255" modified="20210722042417161" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/System</pre>
+<div created="20210709042557255" modified="20210722044202992" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20210706054313563" modified="20210722003736353" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20210706054313563" modified="20210722043128034" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Toolbars</pre>
 </div>
 <div created="20210706055707613" modified="20210719034953887" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Advanced</pre>
@@ -11512,11 +11525,11 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210706055643975" modified="20210709050726562" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20210706054121314" modified="20210722042300722" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210706054121314" modified="20210722043310629" title="$:/state/tab/sidebar--595412856">
+<pre>TableOfContents</pre>
 </div>
-<div created="20210708061319827" modified="20210717194158028" title="$:/state/tabs/controlpanel/toolbars-1345989671">
-<pre>$:/core/ui/ControlPanel/Toolbars/PageControls</pre>
+<div created="20210708061319827" modified="20210722044141957" title="$:/state/tabs/controlpanel/toolbars-1345989671">
+<pre>$:/plugins/tiddlywiki/menubar/config</pre>
 </div>
 <div created="20210722023129607" modified="20210722023131922" title="$:/state/toc/Ai-treemenu-Artificial Intelligence--350119268">
 <pre>close</pre>
@@ -11563,10 +11576,10 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722040451632" list="$:/AdvancedSearch $:/images/fa5/solid/chevron-circle-down $:/tags/ViewToolbar MenuMore [[AI Menu]] $:/config/ViewToolbarButtons/Visibility/MenuMore KnowlEdge" modified="20210722042956207" title="$:/StoryList">
+<div created="20210722043432595" list="$:/AdvancedSearch $:/plugins/tiddlywiki/menubar/items/hamburger $:/ControlPanel KnowlEdge" modified="20210722044205409" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210722042440749" list="$:/images/fa5/solid/chevron-circle-down $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold" modified="20210722042520861" title="$:/tags/ViewToolbar">
+<div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -15748,28 +15761,6 @@ frameborder=&quot;0&quot;
 width=&quot;100%&quot; 
 height=&quot;500&quot;&gt;
 &lt;/iframe&gt;</pre>
-</div>
-<div created="20210722022610659" modified="20210722042945811" tags="" title="MenuMore">
-<pre>\define newHereButtonTags()
-[[$(currentTiddler)$]]
-\end
-\define newHereButton()
-&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
-&lt;$action-sendmessage
-  $message=&quot;tm-new-tiddler&quot;
-$param=&quot;$:/images/fa5/solid/chevron-circle-down&quot;
-title=&quot;New tiddler&quot;
-  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{TITLE OF YOUR SVG IMAGE TIDDLER}}
-&lt;/$list&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;Menu&quot;/&gt;&lt;/span&gt;
-&lt;/$list&gt;
-&lt;/$button&gt;
-\end
-
-&lt;&lt;newHereButton&gt;&gt;</pre>
 </div>
 <div created="20210706164936794" modified="20210718043854033" tags="Economics-treemenu" title="microeconomics">
 <pre>Microeconomics is the area of study of the decisions that individuals and organizations make considering scarcity of resources.
