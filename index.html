@@ -11590,7 +11590,7 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722220314519" list="[[AI and sustainability]] About Economy [[Concepts Menu]] $:/Import DroppableWidget KnowlEdge" modified="20210722224408497" title="$:/StoryList">
+<div created="20210722220314519" list="[[Main Menu]] [[AI and sustainability]] About Economy $:/Import DroppableWidget KnowlEdge" modified="20210722224728892" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -15818,14 +15818,14 @@ Macroeconomics helps determine central banks actions [[fiscal policies]], study 
 
 ^^Source, 1. American Economic Association, [[article &quot;What is economics?&quot;|https://www.aeaweb.org/resources/students/what-is-economics]]</pre>
 </div>
-<div created="20210722222640201" modified="20210722224648623" tags="[[Concepts Menu]]" title="Main Menu">
+<div created="20210722222640201" modified="20210722224823927" tags="[[Concepts Menu]]" title="Main Menu">
 <pre>\define MainMenu()
 [[$(currentTiddlerTag)$]] $(toDoTags)$
 \end
 
 \define newHereButton()
 &lt;$button tooltip={{$:/gpqw/buttons/NewToDoHere/Hint}}
-aria-label={{$:/gpqw/buttons/NewToDoHere/Caption}}
+aria-label={{$:/images/fa5/solid/align-justify}}
 class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;NewToDo&quot;
 tags=&lt;&lt;newToDoHereButtonTags&gt;&gt; /&gt;
@@ -15844,7 +15844,7 @@ text={{$:/gpqw/buttons/NewToDoHere/Caption}}/&gt;&lt;/span&gt;
 &lt;&lt;newToDoHereButton&gt;&gt;
 &lt;/$set&gt;&lt;/$set&gt;
 
-I've set the &quot;caption&quot; field to &quot;{{$:/core/images/done-button}}
+I've set the &quot;caption&quot; field to &quot;{{$:/images/fa5/solid/align-justify}}
 {{$:/gpqw/buttons/NewToDoHere/Caption}}&quot; and &quot;description&quot; to
 {{$:/gpqw/buttons/NewToDoHere/Hint}} and added some text to the latter two
 tiddlers. I've tagged the button tiddler ($:/gpqw/buttons/NewToDoHere) with
