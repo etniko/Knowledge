@@ -15818,16 +15818,16 @@ Macroeconomics helps determine central banks actions [[fiscal policies]], study 
 
 ^^Source, 1. American Economic Association, [[article &quot;What is economics?&quot;|https://www.aeaweb.org/resources/students/what-is-economics]]</pre>
 </div>
-<div created="20210722222640201" modified="20210722224823927" tags="[[Concepts Menu]]" title="Main Menu">
-<pre>\define MainMenu()
+<div created="20210722222640201" modified="20210722224949385" tags="[[Concepts Menu]]" title="Main Menu">
+<pre>\define MainMenubutton()
 [[$(currentTiddlerTag)$]] $(toDoTags)$
 \end
 
-\define newHereButton()
+\define MainMenubutton()
 &lt;$button tooltip={{$:/gpqw/buttons/NewToDoHere/Hint}}
 aria-label={{$:/images/fa5/solid/align-justify}}
 class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
-&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;NewToDo&quot;
+&lt;$action-sendmessage $message=&quot;tm-new-tiddler&quot; title=&quot;Main Menu&quot;
 tags=&lt;&lt;newToDoHereButtonTags&gt;&gt; /&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;prefix[yes]]&quot;&gt;
 {{$:/core/images/done-button}}
