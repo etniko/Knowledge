@@ -11413,8 +11413,8 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210706045806414" modified="20210709051307335" title="$:/SiteTitle">
 <pre>KnowlEdge</pre>
 </div>
-<div created="20210709042557255" modified="20210722044202991" title="$:/state/advancedsearch/currentTab">
-<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+<div created="20210709042557255" modified="20210722172356725" title="$:/state/advancedsearch/currentTab">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210708060130272" modified="20210708060151165" title="$:/state/dropdown/keyboardshortcut/toggle-sidebar-286565879">
 <pre>close</pre>
@@ -11497,8 +11497,8 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210709040132173" modified="20210709050947687" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20210706164159444" modified="20210722172246247" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210706164159444" modified="20210722172547141" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
@@ -11509,8 +11509,8 @@ wikilist-button-remove-hover: #B48EAD
 <div created="20210706054630810" modified="20210717043635721" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
 </div>
-<div created="20210709042557255" modified="20210722044202992" title="$:/state/tab--1498284803">
-<pre>$:/core/ui/AdvancedSearch/Shadows</pre>
+<div created="20210709042557255" modified="20210722172356725" title="$:/state/tab--1498284803">
+<pre>$:/core/ui/AdvancedSearch/System</pre>
 </div>
 <div created="20210706054313563" modified="20210722052149886" title="$:/state/tab--1963855381">
 <pre>$:/core/ui/ControlPanel/Palette</pre>
@@ -11587,7 +11587,7 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722165039401" list="$:/Import [[Draft of 'New Tiddler 1']] [[AI Menu]] MoreMenu [[Three dots]] $:/AdvancedSearch KnowlEdge [[Sustainable Economy]] [[capital assets]]" modified="20210722171051484" title="$:/StoryList">
+<div created="20210722165039401" list="MoreMenu $:/Import [[Draft of 'New Tiddler 1']] [[AI Menu]] [[Three dots]] $:/AdvancedSearch $:/images/fa5/solid/align-justify KnowlEdge [[Sustainable Economy]] [[capital assets]]" modified="20210722172425041" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -15791,7 +15791,7 @@ height=&quot;500&quot;&gt;
 <div created="20210706165616187" modified="20210706165727450" title="Microeconomics">
 <pre>{{microeconomics}}</pre>
 </div>
-<div created="20210722170748793" modified="20210722172301314" tags="" title="MoreMenu">
+<div created="20210722170748793" modified="20210722172550981" tags="" title="MoreMenu">
 <pre>\define newHereButtonTags()
 [[$(currentTiddler)$]]
 \end
@@ -15799,11 +15799,11 @@ height=&quot;500&quot;&gt;
 &lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
 &lt;$action-sendmessage
   $message=&quot;tm-new-tiddler&quot;
-$param=&quot;TITLE OF YOUR SKELETON BUTTON&quot;
+$param=&quot;MoreMenu&quot;
 title=&quot;New tiddler&quot;
   tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{TITLE OF YOUR SVG IMAGE TIDDLER}}
+{{$:/images/fa5/solid/align-justify}}
 &lt;/$list&gt;
 &lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
 &lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;CAPTION FOR YOUR BUTTON&quot;/&gt;&lt;/span&gt;
