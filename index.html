@@ -11563,10 +11563,10 @@ wikilist-button-remove-hover: #B48EAD
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210722040451632" list="$:/AdvancedSearch $:/images/fa5/solid/chevron-circle-down $:/tags/ViewToolbar MenuMore [[AI Menu]] $:/config/ViewToolbarButtons/Visibility/MenuMore KnowlEdge" modified="20210722042420161" title="$:/StoryList">
+<div created="20210722040451632" list="$:/tags/ViewToolbar MenuMore [[AI Menu]] $:/config/ViewToolbarButtons/Visibility/MenuMore KnowlEdge" modified="20210722042420161" title="$:/StoryList">
 <pre></pre>
 </div>
-<div created="20210722042440749" list="$:/images/fa5/solid/chevron-circle-down $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold" modified="20210722042447223" title="$:/tags/ViewToolbar">
+<div created="20210722042440749" list="$:/images/fa5/solid/chevron-circle-down $:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold" modified="20210722042520861" title="$:/tags/ViewToolbar">
 <pre></pre>
 </div>
 <div created="20210706060234490" modified="20210708060257607" title="$:/theme">
@@ -15749,8 +15749,27 @@ width=&quot;100%&quot;
 height=&quot;500&quot;&gt;
 &lt;/iframe&gt;</pre>
 </div>
-<div created="20210722022610659" modified="20210722023611878" title="MenuMore">
-<pre>&lt;i class=&quot;fi-rr-add&quot;&gt;&lt;/i&gt;</pre>
+<div created="20210722022610659" modified="20210722042809054" title="MenuMore">
+<pre>\define newHereButtonTags()
+[[$(currentTiddler)$]]
+\end
+\define newHereButton()
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-sendmessage
+  $message=&quot;tm-new-tiddler&quot;
+$param=&quot;$:/images/fa5/solid/chevron-circle-down&quot;
+title=&quot;New tiddler&quot;
+  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{TITLE OF YOUR SVG IMAGE TIDDLER}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;Menu&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+\end
+
+&lt;&lt;newHereButton&gt;&gt;</pre>
 </div>
 <div created="20210706164936794" modified="20210718043854033" tags="Economics-treemenu" title="microeconomics">
 <pre>Microeconomics is the area of study of the decisions that individuals and organizations make considering scarcity of resources.
