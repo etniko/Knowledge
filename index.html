@@ -454,6 +454,8 @@ Error message and password prompt
 
 <li>Goal of business</li>
 
+<li>Hover tiddler</li>
+
 <li>Human sustainability</li>
 
 <li>inflation</li>
@@ -475,8 +477,6 @@ Error message and password prompt
 <li>macroeconomics</li>
 
 <li>Main Menu</li>
-
-<li>Make one tiddler popup when you hover over a link to another tiddler</li>
 
 <li>Mapmenu Artificial Intelligence</li>
 
@@ -11644,7 +11644,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210723054659696" list="$:/Import KnowlEdge [[Draft of 'Artificial Intelligence']]" modified="20210723055036517" title="$:/StoryList">
+<div created="20210723054659696" list="$:/Import [[Hover tiddler]] KnowlEdge [[Draft of 'Artificial Intelligence']]" modified="20210723055229865" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -15833,6 +15833,21 @@ The proposal includes an emissions trading system (ETS), an energy taxation syst
 
 In today's world, if a business uses natural resources indiscriminately, eventually those resources would start to deplete, the surrounding community, its clients will take notice and will develop and antagonist opinion of it, creating a double self inflicted wound, damaging the environment and the relationships with concern consumers. </pre>
 </div>
+<div created="20140925220350901" modified="20210723055333993" tags="[[Wiki Widgets - buttons, filters, etc.]] Macros" title="Hover tiddler">
+<pre>\define hoverBlurb(label)
+&lt;$hover popup=&quot;$:/state/$label$&quot;&gt;
+[[$label$]]
+&lt;/$hover&gt;
+
+&lt;$reveal type=&quot;popup&quot; state=&quot;$:/state/$label$&quot;&gt;
+&lt;div class=&quot;tc-drop-down&quot;&gt;
+
+&lt;$view tiddler=&quot;$label$&quot; field=&quot;blurb&quot;/&gt;
+
+&lt;/div&gt;
+&lt;/$reveal&gt;
+\end</pre>
+</div>
 <div created="20210531045507332" modified="20210606045219086" title="Human sustainability">
 <pre>Aim to improve the human capital in society, including health and education systems, access to social services, nutrition, knowledge and skills that allow improvement.
 
@@ -15920,42 +15935,6 @@ Macroeconomics helps determine central banks actions [[fiscal policies]], study 
 
 &lt;&lt;--- Key words ---&gt;&gt;
 [[Artificial Intelligence]] | [[Four Pillars of Sustainability]] | [[Economy]] | [[Macroeconomics]] | [[Microeconomics]] | [[Sustainable Economy]]</pre>
-</div>
-<div created="20140925220350901" modified="20141023191428962" tags="[[Wiki Widgets - buttons, filters, etc.]] Macros" title="Make one tiddler popup when you hover over a link to another tiddler">
-<pre>One of the macros in MyHoverMacros implements this, so you need to import that tiddler by clicking on it and dragging it to your wiki for this to wok. It also requires the hover widget so import that too ([[$:/plugins/ahahn/hoverWidget]]) if you haven't already.
-
-The reason `[[Fourier Transform]]` has square brackets and `EquationFourierTransform` doesn't is just because `Fourier Transform` has spaces and it needs to be put into the macro is a form that will give a link. See CamelCase and [[Linking to Other Tiddlers]]
-
-Using this marco you can make a link to one tiddler and when you hover over the link it will make the contents of a second tiddler pop up. So you can have a tiddler [[Fourier Transform]] and a tiddler EquationFourierTransform and use the following code
-
-```
-&lt;&lt;hoverTiddler [[Fourier Transform]] EquationFourierTransform&gt;&gt;
-```
-
-Which gives (hover over it and click on the link to see what is going on):
-
-&lt;&lt;hoverTiddler [[Fourier Transform]] EquationFourierTransform&gt;&gt;
-
-
-The code for this macro is
-
-```
-\define hoverTiddler(tiddler1,tiddler2)
-&lt;$hover popup=&quot;$:/state/$tiddler1$&quot;&gt;
-[[$tiddler1$]]
-&lt;/$hover&gt;
-
-&lt;$reveal type=&quot;popup&quot; state=&quot;$:/state/$tiddler1$&quot;&gt;
-&lt;div class=&quot;tc-drop-down&quot;&gt;
-
-{{$tiddler2$}}
-
-&lt;/div&gt;
-&lt;/$reveal&gt;
-\end
-```
-
-&lt;&lt;bottomOfTiddler {{!!title}}&gt;&gt;</pre>
 </div>
 <div created="20210625163833553" modified="20210718234438205" tags="[[Artificial Intelligence]]" title="Mapmenu Artificial Intelligence">
 <pre>@@background-color:#f8f6fc;
