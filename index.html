@@ -476,6 +476,8 @@ Error message and password prompt
 
 <li>Main Menu</li>
 
+<li>Make one tiddler popup when you hover over a link to another tiddler</li>
+
 <li>Mapmenu Artificial Intelligence</li>
 
 <li>microeconomics</li>
@@ -10564,7 +10566,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/ahahn/hoverWidget/readme]]</pre>
+# [[Make one tiddler popup when you hover over a link to another tiddler]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -11642,7 +11644,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210723054659696" list="KnowlEdge [[Draft of 'Artificial Intelligence']]" modified="20210723054905944" title="$:/StoryList">
+<div created="20210723054659696" list="$:/Import KnowlEdge [[Draft of 'Artificial Intelligence']]" modified="20210723055036517" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -15679,12 +15681,12 @@ Source, title; link if is article, paper, column, book, by author's name, date o
 ---
 ^^Source, [[Forbes magazine|https://www.forbes.com/sites/bernardmarr/2018/10/01/what-is-deep-learning-ai-a-simple-guide-with-8-practical-examples/?sh=299f67d68d4b]] article by Bernard Marr, Oct 10, 2018. Retrieved June 25, 2021.^^</pre>
 </div>
-<div created="20210614035540403" draft.of="Artificial Intelligence" draft.title="Artificial Intelligence" modified="20210723054855437" tags="[[Main Menu]] TableOfContents" title="Draft of 'Artificial Intelligence'" type="text/vnd.tiddlywiki">
+<div created="20210614035540403" draft.of="Artificial Intelligence" draft.title="Artificial Intelligence" modified="20210723055137594" tags="[[Main Menu]] TableOfContents" title="Draft of 'Artificial Intelligence'" type="text/vnd.tiddlywiki">
 <pre>According to John ~MckCarthy^^1^^, from Stanford University, and explained by IBM^^2^^, Artificial Intelligent (AI) is the science and engineering of making intelligent machines, especially intelligent computer programs. It is related to the similar task of using computers to understand human intelligence, but AI does not have to confine itself to methods that are biologically observable.&quot;
 
 Artificial intelligence (AI) is the field devoted to building artificial animals (or at least artificial creatures that – in suitable contexts – appear to be animals) and, for many, artificial persons^^3^^.
 
-According to The Stanford Encyclopedia of Philosophy, Artificial Intelligence singularity will be reached thanks to a process of continuing 
+According to The Stanford Encyclopedia of Philosophy, Artificial Intelligence singularity will be reached thanks to a process of continuing &lt;&lt;hoverTiddler [[innovation]]&gt;&gt; 
 
 
 
@@ -15918,6 +15920,42 @@ Macroeconomics helps determine central banks actions [[fiscal policies]], study 
 
 &lt;&lt;--- Key words ---&gt;&gt;
 [[Artificial Intelligence]] | [[Four Pillars of Sustainability]] | [[Economy]] | [[Macroeconomics]] | [[Microeconomics]] | [[Sustainable Economy]]</pre>
+</div>
+<div created="20140925220350901" modified="20141023191428962" tags="[[Wiki Widgets - buttons, filters, etc.]] Macros" title="Make one tiddler popup when you hover over a link to another tiddler">
+<pre>One of the macros in MyHoverMacros implements this, so you need to import that tiddler by clicking on it and dragging it to your wiki for this to wok. It also requires the hover widget so import that too ([[$:/plugins/ahahn/hoverWidget]]) if you haven't already.
+
+The reason `[[Fourier Transform]]` has square brackets and `EquationFourierTransform` doesn't is just because `Fourier Transform` has spaces and it needs to be put into the macro is a form that will give a link. See CamelCase and [[Linking to Other Tiddlers]]
+
+Using this marco you can make a link to one tiddler and when you hover over the link it will make the contents of a second tiddler pop up. So you can have a tiddler [[Fourier Transform]] and a tiddler EquationFourierTransform and use the following code
+
+```
+&lt;&lt;hoverTiddler [[Fourier Transform]] EquationFourierTransform&gt;&gt;
+```
+
+Which gives (hover over it and click on the link to see what is going on):
+
+&lt;&lt;hoverTiddler [[Fourier Transform]] EquationFourierTransform&gt;&gt;
+
+
+The code for this macro is
+
+```
+\define hoverTiddler(tiddler1,tiddler2)
+&lt;$hover popup=&quot;$:/state/$tiddler1$&quot;&gt;
+[[$tiddler1$]]
+&lt;/$hover&gt;
+
+&lt;$reveal type=&quot;popup&quot; state=&quot;$:/state/$tiddler1$&quot;&gt;
+&lt;div class=&quot;tc-drop-down&quot;&gt;
+
+{{$tiddler2$}}
+
+&lt;/div&gt;
+&lt;/$reveal&gt;
+\end
+```
+
+&lt;&lt;bottomOfTiddler {{!!title}}&gt;&gt;</pre>
 </div>
 <div created="20210625163833553" modified="20210718234438205" tags="[[Artificial Intelligence]]" title="Mapmenu Artificial Intelligence">
 <pre>@@background-color:#f8f6fc;
