@@ -160,6 +160,8 @@ Error message and password prompt
 
 <li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home</li>
 
+<li>$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions</li>
+
 <li>$:/config/PageControlButtons/Visibility/$:/plugins/tiddlywiki/markdown/new-markdown-button</li>
 
 <li>$:/config/Plugins/Disabled/$:/plugins/nico/notebook-mobile</li>
@@ -231,8 +233,6 @@ Error message and password prompt
 <li>$:/palettes/Blanca Orange</li>
 
 <li>$:/palettes/Nord</li>
-
-<li>$:/palettes/Nord Maury</li>
 
 <li>$:/plugins/ahahn/hoverWidget/readme</li>
 
@@ -568,6 +568,9 @@ Error message and password prompt
 <div created="20210706055223373" modified="20210706055223373" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/home">
 <pre>show</pre>
 </div>
+<div created="20210727044845590" modified="20210727044913069" title="$:/config/PageControlButtons/Visibility/$:/core/ui/Buttons/more-page-actions">
+<pre>hide</pre>
+</div>
 <div created="20210717051345654" modified="20210717051345654" title="$:/config/PageControlButtons/Visibility/$:/plugins/tiddlywiki/markdown/new-markdown-button">
 <pre>hide</pre>
 </div>
@@ -598,8 +601,8 @@ Error message and password prompt
 <div created="20210709042030697" modified="20210709042050992" title="$:/config/Toolbar/ButtonClass">
 <pre>tc-btn-invisible</pre>
 </div>
-<div created="20210722231826748" modified="20210722231826748" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions">
-<pre>hide</pre>
+<div created="20210722231826748" modified="20210727044905946" title="$:/config/ViewToolbarButtons/Visibility/$:/core/ui/Buttons/more-tiddler-actions">
+<pre>show</pre>
 </div>
 <div created="20210722042003617" modified="20210722042035852" tags="" title="$:/config/ViewToolbarButtons/Visibility/MenuMore">
 <pre>reveal</pre>
@@ -10646,8 +10649,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 
 }</pre>
 </div>
-<div created="20210706055412183" modified="20210721234912328" title="$:/palette">
-<pre>$:/palettes/Blanca Orange</pre>
+<div created="20210706055412183" modified="20210727044922185" title="$:/palette">
+<pre>$:/palettes/Nord Maury</pre>
 </div>
 <div title="$:/PaletteManager">
 <pre>\define lingo-base() $:/language/ControlPanel/Palette/Editor/
@@ -10977,135 +10980,6 @@ wikilist-button-reveal: #81A1C1
 wikilist-button-reveal-hover: #81A1C1
 wikilist-button-remove: #B48EAD
 wikilist-button-remove-hover: #B48EAD</pre>
-</div>
-<div created="20210710171153624" description="An arctic, north-bluish color palette." license="MIT, arcticicestudio, https://github.com/arcticicestudio/nord/blob/develop/LICENSE.md" modified="20210710171205522" name="Nord" tags="$:/tags/Palette" title="$:/palettes/Nord Maury" type="application/x-tiddler-dictionary">
-<pre>alert-background: #D08770
-alert-border: #D08770
-alert-highlight: #B48EAD
-alert-muted-foreground: #4C566A
-background: #3b4252
-blockquote-bar: &lt;&lt;colour muted-foreground&gt;&gt;
-button-foreground: &lt;&lt;colour page-background&gt;&gt;
-code-background: #2E3440
-code-border: #2E3440
-code-foreground: #BF616A
-diff-delete-background: #BF616A
-diff-delete-foreground: &lt;&lt;colour foreground&gt;&gt;
-diff-equal-background: 
-diff-equal-foreground: &lt;&lt;colour foreground&gt;&gt;
-diff-insert-background: #A3BE8C
-diff-insert-foreground: &lt;&lt;colour foreground&gt;&gt;
-diff-invisible-background: 
-diff-invisible-foreground: &lt;&lt;colour muted-foreground&gt;&gt;
-dirty-indicator: #BF616A
-download-background: #A3BE8C
-download-foreground: &lt;&lt;colour background&gt;&gt;
-dragger-background: &lt;&lt;colour foreground&gt;&gt;
-dragger-foreground: &lt;&lt;colour background&gt;&gt;
-dropdown-background: &lt;&lt;colour background&gt;&gt;
-dropdown-border: &lt;&lt;colour background&gt;&gt;
-dropdown-tab-background-selected: #ECEFF4
-dropdown-tab-background: #4C566A
-dropzone-background: #A3BE8C
-external-link-background-hover: inherit
-external-link-background-visited: inherit
-external-link-background: inherit
-external-link-foreground-hover: inherit
-external-link-foreground-visited: #5E81AC
-external-link-foreground: #8FBCBB
-foreground: #d8dee9
-menubar-background: #2E3440
-menubar-foreground: #d8dee9
-message-background: #2E3440
-message-border: #2E3440
-message-foreground: #547599
-modal-backdrop: &lt;&lt;colour foreground&gt;&gt;
-modal-background: &lt;&lt;colour background&gt;&gt;
-modal-border: #3b4252
-modal-footer-background: #3b4252
-modal-footer-border: #3b4252
-modal-header-border: #3b4252
-muted-foreground: #4C566A
-notification-background: &lt;&lt;colour primary&gt;&gt;
-notification-border: #EBCB8B
-page-background: #2e3440
-pre-background: #2E3440
-pre-border: #2E3440
-primary: #5E81AC
-select-tag-background: #3b4252
-select-tag-foreground: &lt;&lt;colour foreground&gt;&gt;
-selection-background: #5E81AC
-selection-foreground: &lt;&lt;colour foreground&gt;&gt;
-sidebar-button-foreground: &lt;&lt;colour page-background&gt;&gt;
-sidebar-controls-foreground-hover: #D8DEE9
-sidebar-controls-foreground: #4C566A
-sidebar-foreground-shadow: transparent
-sidebar-foreground: #D8DEE9
-sidebar-muted-foreground-hover: #4C566A
-sidebar-muted-foreground: #4C566A
-sidebar-tab-background-selected: #ECEFF4
-sidebar-tab-background: #4C566A
-sidebar-tab-border-selected: &lt;&lt;colour tab-border-selected&gt;&gt;
-sidebar-tab-border: #4C566A
-sidebar-tab-divider: &lt;&lt;colour page-background&gt;&gt;
-sidebar-tab-foreground-selected: #4C566A
-sidebar-tab-foreground: &lt;&lt;colour tab-foreground&gt;&gt;
-sidebar-tiddler-link-foreground-hover: #A3BE8C
-sidebar-tiddler-link-foreground: #81A1C1
-site-title-foreground: &lt;&lt;colour tiddler-title-foreground&gt;&gt;
-static-alert-foreground: #B48EAD
-tab-background-selected: #ECEFF4
-tab-background: #4C566A
-tab-border-selected: #4C566A
-tab-border: #4C566A
-tab-divider: #4C566A
-tab-foreground-selected: #4C566A
-tab-foreground: #D8DEE9
-table-border: #4C566A
-table-footer-background: #2e3440
-table-header-background: #2e3440
-tag-background: #A3BE8C
-tag-foreground: #4C566A
-tiddler-background: &lt;&lt;colour background&gt;&gt;
-tiddler-border: &lt;&lt;colour background&gt;&gt;
-tiddler-controls-foreground-hover: 
-tiddler-controls-foreground-selected: #EBCB8B
-tiddler-controls-foreground: #4C566A
-tiddler-editor-background: #2e3440
-tiddler-editor-border-image: #2e3440
-tiddler-editor-border: #3b4252
-tiddler-editor-fields-even: #2e3440
-tiddler-editor-fields-odd: #2e3440
-tiddler-info-background: #2e3440
-tiddler-info-border: #2e3440
-tiddler-info-tab-background: #2e3440
-tiddler-link-background: &lt;&lt;colour background&gt;&gt;
-tiddler-link-foreground: &lt;&lt;colour primary&gt;&gt;
-tiddler-subtitle-foreground: #4C566A
-tiddler-title-foreground: #81A1C1
-toolbar-new-button: 
-toolbar-options-button: 
-toolbar-save-button: 
-toolbar-info-button: 
-toolbar-edit-button: 
-toolbar-close-button: 
-toolbar-delete-button: 
-toolbar-cancel-button: 
-toolbar-done-button: 
-untagged-background: #2d3038
-very-muted-foreground: #2d3038
-wikilist-background: &lt;&lt;colour page-background&gt;&gt;
-wikilist-toolbar-background: &lt;&lt;colour background&gt;&gt;
-wikilist-item: &lt;&lt;colour background&gt;&gt;
-wikilist-title: &lt;&lt;colour foreground&gt;&gt;
-wikilist-info: &lt;&lt;colour muted-foreground&gt;&gt;
-wikilist-button-open: #A3BE8C
-wikilist-button-open-hover: #A3BE8C
-wikilist-button-reveal: #81A1C1
-wikilist-button-reveal-hover: #81A1C1
-wikilist-button-remove: #B48EAD
-wikilist-button-remove-hover: #B48EAD
-</pre>
 </div>
 <div title="$:/plugins/ahahn/hoverWidget/readme">
 <pre>!Introduction
@@ -11576,8 +11450,8 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
 </div>
-<div created="20210707230755894" modified="20210726043806766" title="$:/state/sidebar">
-<pre>no</pre>
+<div created="20210707230755894" modified="20210727044558348" title="$:/state/sidebar">
+<pre>yes</pre>
 </div>
 <div created="20210706054630810" modified="20210717043635721" title="$:/state/tab--1418380610">
 <pre>$:/core/ui/ControlPanel/Plugins/Add/Plugins</pre>
@@ -11585,8 +11459,8 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210709042557255" modified="20210722230335595" title="$:/state/tab--1498284803">
 <pre>$:/core/ui/AdvancedSearch/Shadows</pre>
 </div>
-<div created="20210706054313563" modified="20210724055903397" title="$:/state/tab--1963855381">
-<pre>$:/themes/tiddlywiki/vanilla/themetweaks</pre>
+<div created="20210706054313563" modified="20210727044916393" title="$:/state/tab--1963855381">
+<pre>$:/core/ui/ControlPanel/Palette</pre>
 </div>
 <div created="20210706055707613" modified="20210719034953887" title="$:/state/tab--2112689675">
 <pre>$:/core/ui/ControlPanel/Advanced</pre>
@@ -11609,8 +11483,8 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210706055643975" modified="20210709050726562" title="$:/state/tab/moresidebar-1850697562">
 <pre>$:/core/ui/MoreSideBar/System</pre>
 </div>
-<div created="20210706054121314" modified="20210723044928773" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210706054121314" modified="20210727044816770" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Tools</pre>
 </div>
 <div created="20210708061319827" modified="20210722231710909" title="$:/state/tabs/controlpanel/toolbars-1345989671">
 <pre>$:/core/ui/ControlPanel/Toolbars/ViewToolbar</pre>
@@ -11690,7 +11564,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210726034821948" list="KnowlEdge [[Four Pillars of Sustainability]] [[Human sustainability]] [[Social sustainability]]" modified="20210726043736779" title="$:/StoryList">
+<div created="20210727044602829" list="$:/ControlPanel KnowlEdge" modified="20210727044751666" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
