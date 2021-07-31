@@ -250,6 +250,8 @@ Error message and password prompt
 
 <li>$:/plugins/tiddlywiki/twitter</li>
 
+<li>$:/plugins/tobibeer/appear</li>
+
 <li>$:/SiteSubtitle</li>
 
 <li>$:/SiteTitle</li>
@@ -10617,7 +10619,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[Make one tiddler popup when you hover over a link to another tiddler]]</pre>
+# [[$:/plugins/tobibeer/appear]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -11658,6 +11660,53 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
     }
 }</pre>
 </div>
+<div author="Tobias Beer" bag="default" core-version="&gt;=5.1.9" dependents="" description="Create popups, sliders or accordion menus with the appear widget." documentation="https://tobibeer.github.io/tw5-appear" list="readme" plugin-type="plugin" requires="" revision="0" source="https://github.com/tobibeer/tw5-appear" title="$:/plugins/tobibeer/appear" type="application/json" version="0.6.2">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/tobibeer/appear/widget.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/widget.js&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/tobibeer/appear/widget.js\r\ntype: application/javascript\r\nmodule-type: widget\r\n\r\nUse the appear widget for popups, sliders, accordion menus\r\n\r\n@preserve\r\n\\*/\n(function(){\&quot;use strict\&quot;;var t=require(\&quot;$:/core/modules/widgets/widget.js\&quot;).widget,e=function(t,e){this.initialise(t,e)},i={};e.prototype=new t;e.prototype.render=function(t,e){this.parentDomNode=t;this.nextSibling=e;this.computeAttributes();this.execute();var i,s,r,a,h,n,l=[];if(this.handle){this.getHandlerCache(this.handle,1);this.refreshHandler()}else{s={type:\&quot;button\&quot;};s.attributes=this.setAttributes(s,\&quot;button\&quot;);i=s.attributes[\&quot;class\&quot;].value.trim();s.attributes[\&quot;class\&quot;].value=i+\&quot; appear-show\&quot;+(this.handler?\&quot; tc-popup-absolute\&quot;:\&quot;\&quot;);s.children=this.wiki.parseText(\&quot;text/vnd.tiddlywiki\&quot;,this.show,{parseAsInline:true}).tree;h={type:\&quot;reveal\&quot;,children:this.parseTreeNode.children};h.attributes=this.setAttributes(h,\&quot;reveal\&quot;);h.isBlock=!(this.mode&amp;&amp;this.mode===\&quot;inline\&quot;);if(h.attributes.type&amp;&amp;h.attributes.type.value===\&quot;popup\&quot;){s.attributes.popup=h.attributes.state;l.push(s);if(!this.handler){l.push(h)}else{s.attributes.handler=this.handler}}else{h.attributes.type={type:\&quot;string\&quot;,value:\&quot;match\&quot;};h.attributes.text={type:\&quot;string\&quot;,value:this.currentTiddler};s.attributes.set=h.attributes.state;s.attributes.setTo={type:\&quot;string\&quot;,value:this.currentTiddler};a={type:\&quot;reveal\&quot;,isBlock:this.block,children:[s],attributes:{type:{type:\&quot;string\&quot;,value:\&quot;nomatch\&quot;},state:h.attributes.state,text:{type:\&quot;string\&quot;,value:this.currentTiddler}}};if(!this.once){r=$tw.utils.deepCopy(s);r.attributes[\&quot;class\&quot;].value=i+\&quot; appear-hide \&quot;+(this.attr.button.selectedClass?this.attr.button.selectedClass:\&quot;\&quot;);r.attributes.setTo={type:\&quot;string\&quot;,value:\&quot;\&quot;};r.children=this.wiki.parseText(\&quot;text/vnd.tiddlywiki\&quot;,this.hide,{parseAsInline:true}).tree}n=$tw.utils.deepCopy(a);n.children=[];if(!this.once){n.children.push(r)}if(!this.handler){n.children.push(h)}n.attributes.type.value=\&quot;match\&quot;;l.push(a,n)}this.makeChildWidgets(l);this.renderChildren(this.parentDomNode,e);if(this.handler){this.addToHandlerCache(h)}}};e.prototype.execute=function(){var t=this;this.attr={map:{reveal:{\&quot;class\&quot;:1,position:1,retain:1,state:1,style:1,tag:1,type:1},button:{\&quot;button-class\&quot;:1,\&quot;button-style\&quot;:1,\&quot;button-tag\&quot;:1,tooltip:1,selectedClass:1}},rename:{\&quot;button-class\&quot;:\&quot;class\&quot;,\&quot;button-style\&quot;:\&quot;style\&quot;,\&quot;button-tag\&quot;:\&quot;tag\&quot;},button:{},reveal:{}};$tw.utils.each(this.attributes,function(e,i){var s;$tw.utils.each(t.attr.map,function(r,a){$tw.utils.each(Object.keys(r),function(r){if(r==i){t.attr[a][i]=e;s=false;return false}});return s})});this.currentTiddler=this.getVariable(\&quot;currentTiddler\&quot;);this.show=this.getValue(this.attributes.show,\&quot;show\&quot;);this.hide=this.getValue(this.attributes.hide,\&quot;hide\&quot;);if(!this.hide){this.hide=this.show}this.once=this.attributes.once&amp;&amp;this.attributes.once!==\&quot;false\&quot;;this.$state=this.attributes.$state;this.mode=this.getValue(this.attributes.mode,\&quot;mode\&quot;);this.handle=this.attributes.handle;this.handler=this.attributes.handler;this.handlerVariables=(this.attributes.variables||\&quot;\&quot;)+\&quot; currentTiddler\&quot;;this.keep=[\&quot;yes\&quot;,\&quot;true\&quot;].indexOf((this.getValue(this.attributes.keep,\&quot;keep\&quot;)||\&quot;\&quot;).toLocaleLowerCase())&gt;-1;if(!this.attr.reveal.state){this.attr.reveal.state=this.getValue(undefined,\&quot;default-state\&quot;)+this.currentTiddler+this.getStateQualifier()+\&quot;/\&quot;+(this.attr.reveal.type?this.attr.reveal.type+\&quot;/\&quot;:\&quot;\&quot;)+(this.mode?this.mode+\&quot;/\&quot;:\&quot;\&quot;)+(this.once?\&quot;once/\&quot;:\&quot;\&quot;)+(this.$state?\&quot;/\&quot;+this.$state:\&quot;\&quot;)}};e.prototype.refresh=function(t){var e=this.computeAttributes();if(Object.keys(e).length){this.refreshSelf();return true}if(this.handle){this.refreshHandler()}return this.refreshChildren(t)};e.prototype.getValue=function(t,e){var i,s,r={show:\&quot;»\&quot;,\&quot;default-state\&quot;:\&quot;$:/temp/appear/\&quot;};if(t===undefined){i=this.wiki.getTiddler(\&quot;$:/plugins/tobibeer/appear/defaults/\&quot;+e);if(i){s=i.getFieldString(\&quot;undefined\&quot;);if(!s||s===\&quot;false\&quot;){t=i.getFieldString(\&quot;text\&quot;)}}}if(t===undefined){t=r[e]}return t};e.prototype.setAttributes=function(t,e){var i=this,s={};$tw.utils.each(Object.keys(this.attr.map[e]),function(r){var a,h=i.attr.rename[r];if(!h){h=r}a=i.getValue(i.attr[e][r],r);if(h===\&quot;class\&quot;){a=[\&quot;appear\&quot;,\&quot;appear-\&quot;+e,e===\&quot;reveal\&quot;&amp;&amp;i.keep?\&quot;tc-popup-keep\&quot;:\&quot;\&quot;,i.mode?\&quot;appear-\&quot;+i.mode:\&quot;\&quot;,i.once?\&quot;appear-once\&quot;:\&quot;\&quot;,a||\&quot;\&quot;].join(\&quot; \&quot;)}if(a!==undefined){if(h===\&quot;tag\&quot;){t.tag=a}else{s[h]={type:\&quot;string\&quot;,value:a}}}});return s};e.prototype.getHandlerCache=function(t,e){var s=i[t];if(!s||e){i[t]={handled:{},handle:{}};s=i[t]}return s};e.prototype.refreshHandler=function(){var t=this,e=this.getHandlerCache(this.handle),s=e.handle;if(Object.keys(s).length){$tw.utils.each(s,function(e,i){t.removeChildNode(i);t.children.push(t.makeChildWidget(e));t.children[t.children.length-1].render(t.parentDomNode,t.nextSibling)});i[this.handle].handle={}}};e.prototype.removeChildNode=function(t){var e=this;$tw.utils.each(this.children,function(i,s){if(i.children[0].state===t){i.removeChildDomNodes();e.children.splice(s);return false}})};e.prototype.addToHandlerCache=function(t){var e=this,i=t.attributes.state.value,s=this.getHandlerCache(this.handler),r=s.handled[i],a={type:\&quot;vars\&quot;,children:[t],attributes:{}};$tw.utils.each((this.handlerVariables||\&quot;\&quot;).split(\&quot; \&quot;),function(t){t=t.trim();if(t){a.attributes[t]={type:\&quot;string\&quot;,value:(e.getVariable(t)||\&quot;\&quot;).toString()}}});if(a!==r){s.handle[i]=a;this.wiki.setText(\&quot;$:/temp/appear-handler/\&quot;+this.handler,\&quot;text\&quot;,undefined,i)}};exports.appear=e})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;widget&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/defaults/show&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/defaults/show&quot;,
+            &quot;text&quot;: &quot;»&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/defaults/mode&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/defaults/mode&quot;,
+            &quot;text&quot;: &quot;block&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/defaults/keep&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/defaults/keep&quot;,
+            &quot;text&quot;: &quot;yes&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/defaults/button-class&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/defaults/button-class&quot;,
+            &quot;text&quot;: &quot;tc-btn-invisible tc-tiddlylink&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/defaults/default-state&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/defaults/default-state&quot;,
+            &quot;text&quot;: &quot;$:/temp/appear/&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/popup.js&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/popup.js&quot;,
+            &quot;text&quot;: &quot;/*\\\r\ntitle: $:/plugins/tobibeer/appear/popup.js\r\ntype: application/javascript\r\nmodule-type: utils\r\n\r\nAn enhanced version of the core Popup to support:\r\n* absolute popups\r\n* preview popups\r\n* popup z-index\r\n\r\n@preserve\r\n\\*/\n(function(){\&quot;use strict\&quot;;var t=require(\&quot;$:/core/modules/utils/dom/popup.js\&quot;).Popup,e=require(\&quot;$:/core/modules/widgets/reveal.js\&quot;).reveal,s=e.prototype.refresh;t.prototype.show=function(t){var e,s=t.domNode,p=$tw.utils.hasClass(s,\&quot;tc-popup-absolute\&quot;),o=this.popupInfo(s),i=function(t){var e=t,s=0,p=0;do{s+=e.offsetLeft||0;p+=e.offsetTop||0;e=e.offsetParent}while(e);return{left:s,top:p}},l={left:s.offsetLeft,top:s.offsetTop};e=o.popupLevel;if(o.isHandle){e++}this.cancel(e);if(this.findPopup(t.title)===-1){this.popups.push({title:t.title,wiki:t.wiki,domNode:s})}l=p?i(s):l;t.wiki.setTextReference(t.title,\&quot;(\&quot;+l.left+\&quot;,\&quot;+l.top+\&quot;,\&quot;+s.offsetWidth+\&quot;,\&quot;+s.offsetHeight+\&quot;)\&quot;);if(this.popups.length&gt;0){this.rootElement.addEventListener(\&quot;click\&quot;,this,true)}};t.prototype.popupInfo=function(t){var e,s=false,p=t;while(p&amp;&amp;e===undefined){if($tw.utils.hasClass(p,\&quot;tc-popup-handle\&quot;)||$tw.utils.hasClass(p,\&quot;tc-popup-keep\&quot;)){s=true}if($tw.utils.hasClass(p,\&quot;tc-reveal\&quot;)&amp;&amp;($tw.utils.hasClass(p,\&quot;tc-popup\&quot;)||$tw.utils.hasClass(p,\&quot;tc-popup-handle\&quot;))){e=parseInt(p.style.zIndex)-1e3}p=p.parentNode}var o={popupLevel:e||0,isHandle:s};return o};t.prototype.handleEvent=function(t){if(t.type===\&quot;click\&quot;){var e=this.popupInfo(t.target),s=e.popupLevel-1;if(e.isHandle){if(s&lt;0){s=1}else{s++}}this.cancel(s)}};e.prototype.refresh=function(){var t,e,p=this.isOpen;e=s.apply(this,arguments);t=this.domNodes[0];if(this.isOpen&amp;&amp;(p!==this.isOpen||!t.style.zIndex)&amp;&amp;t&amp;&amp;(this.type===\&quot;popup\&quot;||$tw.utils.hasClass(t,\&quot;tc-block-dropdown\&quot;)&amp;&amp;$tw.utils.hasClass(t,\&quot;tc-reveal\&quot;))){t.style.zIndex=1e3+$tw.popup.popups.length}return e}})();&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;utils&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/readme&quot;,
+            &quot;text&quot;: &quot;This plugin provides the ''$appear'' widget that can render popups and sliders (inline or block) as well as accordion menus.\n\n!! Attributes\r\n; type\r\n: set to `popup` to have the content appear as a popup\r\n; show\r\n: the button label\r\n; hide\r\n: the hide button label\r\n; mode\r\n: either `block` or `inline`, with respect to the inner content\r\n: any other mode is interpreted as block mode, without the default styles applying, e.g. drop-shadows\r\n; once\r\n: allows to click the button once, then hides it (unless the state is deleted)\r\n; $state\r\n: the widget calculates a state for you, use this to append a simple id\r\n; state\r\n: alternatively, specify a fully qualified state\r\n; keep\r\n: make popups sticky when `yes` or `true`\r\n; handle / handler / variables\r\n: allows to take the popup contents out of the flow and render them elsewhere on the page\r\n: required to properly create popups in table cells and other constained elements\r\n: specify variables to take along\n\n&lt;br&gt;\n\n; documentation / examples / demos...\r\n: http://tobibeer.github.io/tw5-plugins#appear\r\n&quot;
+        },
+        &quot;$:/plugins/tobibeer/appear/styles&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/tobibeer/appear/styles&quot;,
+            &quot;tags&quot;: &quot;$:/tags/Stylesheet&quot;,
+            &quot;text&quot;: &quot;\\rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html\n\n&lt;pre&gt;.tc-reveal.appear-block,\r\n.tc-popup.appear {\r\n\tborder-radius: 5px;\r\n\tpadding: 1px 1em;\r\n\t&lt;&lt;box-shadow \&quot;2px 2px 4px rgba(0,0,0,0.3)\&quot;&gt;&gt;;\r\n}\r\n.tc-popup.appear {\r\n\tpadding: 0 1em;\r\n\tbackground: &lt;&lt;colour background&gt;&gt;;\r\n}\r\n.appear-reveal.appear-inline{\r\nmargin-left:5px;\r\n}\r\n.appear-reveal.appear-inline.appear-once{\r\nmargin-left:0;\r\n}&lt;/pre&gt;&quot;
+        }
+    }
+}</pre>
+</div>
 <div created="20210706053204586" modified="20210706053218373" title="$:/SiteSubtitle">
 <pre>Ideas for a more sustainable economy</pre>
 </div>
@@ -11884,9 +11933,9 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <pre>show</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div created="20210730052112343" list="Finance KnowlEdge Economy" modified="20210730052239472" title="$:/StoryList">
+<div list="$:/Import KnowlEdge" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
