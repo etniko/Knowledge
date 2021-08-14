@@ -244,6 +244,8 @@ Error message and password prompt
 
 <li>$:/plugins/ahahn/hoverWidget/readme</li>
 
+<li>$:/plugins/felixhayashi/respawn</li>
+
 <li>$:/plugins/nico/notebook-mobile</li>
 
 <li>$:/plugins/tiddlywiki/katex</li>
@@ -10678,7 +10680,7 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 <div status="complete" title="$:/Import">
 <pre>The following tiddlers were imported:
 
-# [[$:/plugins/tobibeer/appear]]</pre>
+# [[$:/plugins/felixhayashi/respawn]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10736,8 +10738,8 @@ $:/config/PageControlButtons/Visibility/$(listItem)$
 
 }</pre>
 </div>
-<div created="20210706055412183" modified="20210814043618988" title="$:/palette">
-<pre>$:/palettes/GruvboxDark</pre>
+<div created="20210706055412183" modified="20210814171411593" title="$:/palette">
+<pre>$:/palettes/Blanca Orange</pre>
 </div>
 <div title="$:/PaletteManager">
 <pre>\define lingo-base() $:/language/ControlPanel/Palette/Editor/
@@ -11448,6 +11450,30 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 |default |Default value if `set` tiddler is missing for testing against `setTo` to determine `selectedClass` |
 |on |One of `hover`, `mousein`, `mouseout`. Defaults to `hover`. Specifies when the actions are triggered, `hover` ensures a symmetric popup action. |
 </pre>
+</div>
+<div author="Felix Küppers" core-version="&gt;=5.1.5" dependents="" description="Respawn – Open default tiddlers when river is empty" list="Configuration License Readme" plugin-type="plugin" released="" source="https://github.com/felixhayashi/TW5-respawn" title="$:/plugins/felixhayashi/respawn" type="application/json" version="0.0.3">
+<pre>{
+    &quot;tiddlers&quot;: {
+        &quot;$:/plugins/felixhayashi/respawn/respawn.js&quot;: {
+            &quot;text&quot;: &quot;/*\\\n\ntitle: $:/plugins/felixhayashi/respawn/respawn.js\ntype: application/javascript\nmodule-type: startup\n\n@preserve\n\n\\*/\n\n(function(){\n  \n  /*jslint node: true, browser: true */\n  /*global $tw: false */\n  \&quot;use strict\&quot;;\n  \n  var configTRef = \&quot;$:/plugins/felixhayashi/respawn/config\&quot;;\n  \n  var changeListener = function(changedTiddlers) {\n    \n    if(!changedTiddlers[\&quot;$:/StoryList\&quot;]) return;\n    \n    var tObj = $tw.wiki.getTiddler(\&quot;$:/StoryList\&quot;);\n    if(tObj &amp;&amp; !tObj.fields[\&quot;list\&quot;].length) {\n      \n      var confTObj = $tw.wiki.getTiddler(configTRef);\n      var config = confTObj ? confTObj.fields : {};\n      \n      window.setTimeout(function() {\n        $tw.rootWidget.dispatchEvent({\n          type: \&quot;tm-home\&quot;\n        });\n      }, parseInt(config.delay) || 500);\n    }\n    \n  };\n  \n  exports.name = \&quot;respawn\&quot;;\n  exports.platforms = [\&quot;browser\&quot;];\n  exports.after = [\&quot;story\&quot;];\n  exports.synchronous = true;\n  \n  exports.startup = function() {\n        \n    $tw.wiki.addEventListener(\&quot;change\&quot;, changeListener);\n    \n  };\n\n})();\n&quot;,
+            &quot;title&quot;: &quot;$:/plugins/felixhayashi/respawn/respawn.js&quot;,
+            &quot;type&quot;: &quot;application/javascript&quot;,
+            &quot;module-type&quot;: &quot;startup&quot;
+        },
+        &quot;$:/plugins/felixhayashi/respawn/Configuration&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/felixhayashi/respawn/Configuration&quot;,
+            &quot;text&quot;: &quot;&lt;!-- The config output is not written to this tiddler! --&gt;\n\nPlease see the [[GitHub page|https://github.com/felixhayashi/TW5-Respawn]] for more information on the options.\n\nYou may have to save and reload the wiki to activate changes.\n\n&lt;table&gt;\n  &lt;tr&gt;\n    &lt;th align=\&quot;left\&quot;&gt;Delay (seconds):&lt;/th&gt;\n    &lt;td&gt;\n      &lt;$edit-text\n          tiddler=\&quot;$:/plugins/felixhayashi/respawn/config\&quot;\n          field=\&quot;delay\&quot;\n          tag=\&quot;input\&quot;\n          default=\&quot;500\&quot; /&gt;\n    &lt;/td&gt;\n  &lt;/tr&gt;\n&lt;/table&gt;&quot;
+        },
+        &quot;$:/plugins/felixhayashi/respawn/License&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/felixhayashi/respawn/License&quot;,
+            &quot;text&quot;: &quot;This code is released under the BSD license. For the exact terms visit:\n\nhttps://github.com/felixhayashi/TW5-Respawn/blob/master/LICENSE&quot;
+        },
+        &quot;$:/plugins/felixhayashi/respawn/Readme&quot;: {
+            &quot;title&quot;: &quot;$:/plugins/felixhayashi/respawn/Readme&quot;,
+            &quot;text&quot;: &quot;Please visit the [[GitHub page|https://github.com/felixhayashi/TW5-Respawn]] for more information.&quot;
+        }
+    }
+}</pre>
 </div>
 <div author="NicolasPetton" bag="default" core-version="&gt;=5.1.22" dependents="" description="JavaScript hooks for mobile devices support of the Notebook theme" list="" name="Mobile support for the Notebook theme" plugin-type="plugin" revision="0" source="https://github.com/NicolasPetton/Notebook" title="$:/plugins/nico/notebook-mobile" type="application/json" version="1.0.0">
 <pre>{
@@ -12241,9 +12267,9 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <pre>show</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
-<pre>no</pre>
+<pre>yes</pre>
 </div>
-<div created="20210814044355424" list="macroeconomics [[10Aug2021 article cite]] deflation [[NPV rule]] [[Economic sustainability]] KnowlEdge Economy" modified="20210814051510354" title="$:/StoryList">
+<div list="$:/Import KnowlEdge" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
