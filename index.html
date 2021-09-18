@@ -642,8 +642,6 @@ Error message and password prompt
 
 <li>Main Menu</li>
 
-<li>MainMenu Tree</li>
-
 <li>Mapmenu Artificial Intelligence</li>
 
 <li>market efficiency</li>
@@ -12347,8 +12345,8 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210709040132173" modified="20210709050947687" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20210706164159444" modified="20210918233013551" title="$:/state/showeditpreview">
-<pre>yes</pre>
+<div created="20210706164159444" modified="20210918234237204" title="$:/state/showeditpreview">
+<pre>no</pre>
 </div>
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
@@ -12548,7 +12546,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210918232913859" list="[[MainMenu Tree]] macroeconomics microeconomics [[Appear Slide example]] KnowlEdge [[Main Menu]]" modified="20210918233958668" title="$:/StoryList">
+<div created="20210918234145405" list="macroeconomics KnowlEdge" modified="20210918234145405" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -17298,8 +17296,12 @@ The concept of self learning started due to the difficulty of programming highly
 <div created="20210704025350450" modified="20210730051230983" tags="" title="Macroeconomics">
 <pre>{{macroeconomics}}</pre>
 </div>
-<div created="20210704023225065" modified="20210918233934218" tags="economy" title="macroeconomics">
-<pre>
+<div created="20210704023225065" modified="20210918234238786" tags="economy" title="macroeconomics">
+<pre>|&lt;$vars tid=&quot;economy&quot;&gt;
+&lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
+&lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
+&lt;/$appear&gt;
+&lt;/$vars&gt;
 
 ♢According to the American Economic Association, macroeconomics &lt;$appear type=&quot;popup&quot; keep=&quot;no&quot; $state=&quot;sticky&quot;&gt;
 
@@ -17334,13 +17336,6 @@ Macroeconomics helps determine central banks actions [[fiscal policies]], study 
 
 &lt;&lt;--- Key words ---&gt;&gt;
 [[Artificial Intelligence]] | [[Machine Learning]] | [[Deep Learning]] | [[Four Pillars of Sustainability]] | [[Economy]] | [[Macroeconomics]] | [[Microeconomics]] | [[Sustainable Economy]]</pre>
-</div>
-<div caption="Main Menu Tree" created="20210918233305976" modified="20210918234016420" tags="$:/tags/TextEditor/Snippet" title="MainMenu Tree">
-<pre>&lt;$appear&gt;
-&lt;div class=&quot;tc-table-of-contents&quot;&gt;
-&lt;&lt;toc-expandable &quot;TableOfContents&quot;&gt;&gt;
-&lt;/div&gt;
-&lt;/$appear&gt;</pre>
 </div>
 <div created="20210625163833553" modified="20210909042652315" tags="[[artificial intelligence]]" title="Mapmenu Artificial Intelligence">
 <pre>@@background-color:#f8f6fc;
