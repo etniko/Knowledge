@@ -690,6 +690,8 @@ Error message and password prompt
 
 <li>singularity</li>
 
+<li>Slider Tiddler Menu</li>
+
 <li>social asset</li>
 
 <li>Social sustainability</li>
@@ -723,8 +725,6 @@ Error message and password prompt
 <li>Three dots</li>
 
 <li>Tiddler Menu variable</li>
-
-<li>Tiddler Slider Menu</li>
 
 <li>trade</li>
 
@@ -12554,7 +12554,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210919000711037" list="[[Non Sticky Slider Menu]] [[Tiddler Slider Menu]] [[Draft of 'ethical conduct']] KnowlEdge" modified="20210919000828780" title="$:/StoryList">
+<div created="20210919000711037" list="[[Non Sticky Slider Menu]] [[Slider Tiddler Menu]] [[Draft of 'ethical conduct']] KnowlEdge" modified="20210919000828780" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -17671,6 +17671,13 @@ AI systems will reach a point where they can self-improve in a recurring and acc
 ---
 !!!! 1. [[Kurzweil|https://www.kurzweilai.net]]</pre>
 </div>
+<div caption="Slider Tiddler" created="20210919000906524" modified="20210919001130986" tags="$:/tags/TextEditor/Snippet" title="Slider Tiddler Menu" type="Tiddler Slider">
+<pre>&lt;$vars tid=&quot;GettingStarted&quot;&gt;
+&lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
+&lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
+&lt;/$appear&gt;
+&lt;/$vars&gt;</pre>
+</div>
 <div created="20210913043012644" modified="20210913043820498" tags="[[sustainable economy]]" title="social asset">
 <pre>⋮[[sustainable economy]]
 
@@ -17882,13 +17889,6 @@ According to professor, Andy Lane, from Open University, technology has three ma
 </div>
 <div caption="Tiddler Menu" created="20210918234253275" modified="20210918234321359" tags="$:/tags/TextEditor/Snippet" title="Tiddler Menu variable">
 <pre>|&lt;$vars tid=&quot;economy&quot;&gt;
-&lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
-&lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
-&lt;/$appear&gt;
-&lt;/$vars&gt;</pre>
-</div>
-<div caption="Name as shown in menu" created="20210919000906524" modified="20210919000929003" tags="$:/tags/TextEditor/Snippet" title="Tiddler Slider Menu" type="Tiddler Slider">
-<pre>&lt;$vars tid=&quot;GettingStarted&quot;&gt;
 &lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
 &lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
 &lt;/$appear&gt;
