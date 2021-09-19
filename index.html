@@ -568,8 +568,6 @@ Error message and password prompt
 
 <li>Diamond bullet symbol</li>
 
-<li>Draft of 'macroeconomics'</li>
-
 <li>DroppableWidget</li>
 
 <li>EAIR</li>
@@ -12564,7 +12562,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210919003856904" list="⋮ KnowlEdge [[Main Menu]]" modified="20210919003911648" title="$:/StoryList">
+<div created="20210919003856904" list="macroeconomics ⋮ KnowlEdge [[Main Menu]]" modified="20210919003924615" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -16846,35 +16844,6 @@ The two damaging episodes of deflation in this century were the sharp drop in ov
 <div caption="diamond bullet" created="20210807035028414" modified="20210807035158315" tags="$:/tags/TextEditor/Snippet" title="Diamond bullet symbol" type="text/vnd.tiddlywiki">
 <pre>♢</pre>
 </div>
-<div created="20210704023225065" draft.of="macroeconomics" draft.title="macroeconomics" modified="20210919003835767" tags="economy" title="Draft of 'macroeconomics'">
-<pre>
-
-♢According to the American Economic Association, macroeconomics &lt;$appear type=&quot;popup&quot; keep=&quot;no&quot; $state=&quot;sticky&quot;&gt;
-
-[[microeconomics]]
-
-&lt;/$appear&gt;
-&lt;&lt;== end ==&gt;&gt;
-is the field of study that looks at the economy as a whole for the best way to allocate scarce resources to improve society, and all its actors.
-
-Many different definitions are put forward depending of the academic objectives or the institution defining it, but general consensus agree that macroeconomics is the study of scarcity, the study of how people use resources and respond to incentives, decision-making, and how global or governmental institutions take certain actions as response of certain realities, such as [[inflation]] after, certain trends of economic activities (cooling down or over heating).
-
-Macroeconomics study as well how nations transact between each other and propose ideas on how to improve those economic relations. The ultimate goal is to improve society as a whole.
-
-&gt;&quot;Economics is a broad discipline that helps us understand historical trends, interpret today’s headlines, and make predictions about the coming years&quot;^^1^^.
-
-Macroeconomics helps determine central banks actions [[fiscal policies]], study unemployment numbers and trends. Helps to predict future demand for certain type of skilled workers, and assist on the decision making of trade, tariffs, taxes, quotas, among other protectionist measures, and whether those are good or effective.
-
-♢In general, the main goals of macroeconomics are, economic growth, low unemployment, and low [[inflation]]^^2^^.
-
-∷ [[microeconomics]] | [[sustainable economy]] | [[deflation]] | [[stagnation]]
-
----
-
-!!!!!1. American Economic Association, [[article &quot;What is economics?&quot;|https://www.aeaweb.org/resources/students/what-is-economics]].
-
-!!!!!2. Principles of Economics, Steven A. Greenlaw, David Shapiro. [[Book|https://openstax.org/details/books/principles-economics-2e]].</pre>
-</div>
 <div caption="droppable" created="20170406082820317" modified="20200317142604572" tags="Widgets" title="DroppableWidget" type="text/vnd.tiddlywiki">
 <pre>\define droppable-image-actions()
 &lt;$action-setfield $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&quot;icon&quot; $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
@@ -17347,8 +17316,14 @@ The concept of self learning started due to the difficulty of programming highly
 <div created="20210704025350450" modified="20210730051230983" tags="" title="Macroeconomics">
 <pre>{{macroeconomics}}</pre>
 </div>
-<div created="20210704023225065" modified="20210919002518219" tags="economy" title="macroeconomics">
-<pre>♢According to the American Economic Association, macroeconomics &lt;$appear type=&quot;popup&quot; keep=&quot;no&quot; $state=&quot;sticky&quot;&gt;
+<div created="20210704023225065" modified="20210919004001697" tags="economy" title="macroeconomics">
+<pre>&lt;$vars tid=&quot;⋮&quot;&gt;
+&lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
+&lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
+&lt;/$appear&gt;
+&lt;/$vars&gt;
+
+♢According to the American Economic Association, macroeconomics &lt;$appear type=&quot;popup&quot; keep=&quot;no&quot; $state=&quot;sticky&quot;&gt;
 
 [[microeconomics]]
 
