@@ -564,6 +564,10 @@ Error message and password prompt
 
 <li>Diamond bullet symbol</li>
 
+<li>Draft of 'ethical conduct'</li>
+
+<li>Draft of 'Non Sticky Slider Menu'</li>
+
 <li>DroppableWidget</li>
 
 <li>EAIR</li>
@@ -721,6 +725,8 @@ Error message and password prompt
 <li>Three dots</li>
 
 <li>Tiddler Menu variable</li>
+
+<li>Tiddler Slider Menu</li>
 
 <li>trade</li>
 
@@ -12349,8 +12355,8 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210709040132173" modified="20210709050947687" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20210706164159444" modified="20210918234756569" title="$:/state/showeditpreview">
-<pre>no</pre>
+<div created="20210706164159444" modified="20210918235527693" title="$:/state/showeditpreview">
+<pre>yes</pre>
 </div>
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
 <pre>yes</pre>
@@ -12550,7 +12556,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210918234332297" list="macroeconomics [[Non Sticky Slider Menu]] KnowlEdge [[AI and sustainability]]" modified="20210918234421108" title="$:/StoryList">
+<div created="20210919000711037" list="[[Draft of 'Non Sticky Slider Menu']] [[Tiddler Slider Menu]] [[Draft of 'ethical conduct']] KnowlEdge" modified="20210919000828780" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20210722042440749" list="$:/core/ui/Buttons/more-tiddler-actions $:/core/ui/Buttons/info $:/core/ui/Buttons/new-here $:/core/ui/Buttons/new-journal-here $:/core/ui/Buttons/clone $:/core/ui/Buttons/export-tiddler $:/core/ui/Buttons/edit $:/core/ui/Buttons/delete $:/core/ui/Buttons/permalink $:/core/ui/Buttons/permaview $:/core/ui/Buttons/open-window $:/core/ui/Buttons/close-others $:/core/ui/Buttons/close $:/core/ui/Buttons/fold-others $:/core/ui/Buttons/fold $:/core/ui/Buttons/home $:/core/ui/Buttons/fold-bar" modified="20210722043150377" title="$:/tags/ViewToolbar">
@@ -16832,6 +16838,25 @@ The two damaging episodes of deflation in this century were the sharp drop in ov
 <div caption="diamond bullet" created="20210807035028414" modified="20210807035158315" tags="$:/tags/TextEditor/Snippet" title="Diamond bullet symbol" type="text/vnd.tiddlywiki">
 <pre>♢</pre>
 </div>
+<div created="20210915190917599" draft.of="ethical conduct" draft.title="ethical conduct" modified="20210919000821233" tags="ethics" title="Draft of 'ethical conduct'">
+<pre>Ethical conduct is the behaviour that follows moral principles and balances or help to find an equilibrium between self interest with consequences of the behaviour on others. 
+
+Ethical actions are considered beneficial to society such as honesty, transparency, fairness, diligence and respect^^1^^.
+
+∷[[standard of conduct]]
+
+---
+!!!!!1. CFA Institute, CFA Program Curriculum Level 1, Chapter 1, Ethics, 2019. [[CFA Institute|https://www.cfainstitute.org]]
+
+  </pre>
+</div>
+<div caption="Non Sticky Slider" created="20210918234543675" draft.of="Non Sticky Slider Menu" draft.title="Non Sticky Slider Menu" modified="20210919000836956" tags="$:/tags/TextEditor/Snippet" title="Draft of 'Non Sticky Slider Menu'">
+<pre>before &lt;$appear type=&quot;popup&quot; keep=&quot;no&quot; $state=&quot;sticky&quot;&gt;
+
+! Non-Sticky Popup
+
+I will close as well when you click inside me.&lt;/$appear&gt; after</pre>
+</div>
 <div caption="droppable" created="20170406082820317" modified="20200317142604572" tags="Widgets" title="DroppableWidget" type="text/vnd.tiddlywiki">
 <pre>\define droppable-image-actions()
 &lt;$action-setfield $tiddler=&lt;&lt;actionTiddler&gt;&gt; $field=&quot;icon&quot; $value=&lt;&lt;currentTiddler&gt;&gt;/&gt;
@@ -17864,6 +17889,13 @@ According to professor, Andy Lane, from Open University, technology has three ma
 </div>
 <div caption="Tiddler Menu" created="20210918234253275" modified="20210918234321359" tags="$:/tags/TextEditor/Snippet" title="Tiddler Menu variable">
 <pre>|&lt;$vars tid=&quot;economy&quot;&gt;
+&lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
+&lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
+&lt;/$appear&gt;
+&lt;/$vars&gt;</pre>
+</div>
+<div caption="Name as shown in menu" created="20210919000906524" modified="20210919000929003" tags="$:/tags/TextEditor/Snippet" title="Tiddler Slider Menu" type="Tiddler Slider">
+<pre>&lt;$vars tid=&quot;GettingStarted&quot;&gt;
 &lt;$appear show=&quot;&lt;$text text=&lt;&lt;tid&gt;&gt;/&gt;&quot; $state=&quot;tiddler-slider&quot; mode=&quot;block&quot;&gt;
 &lt;$transclude mode=&quot;block&quot; tiddler=&lt;&lt;tid&gt;&gt;/&gt;
 &lt;/$appear&gt;
