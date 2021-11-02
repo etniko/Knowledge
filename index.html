@@ -19360,29 +19360,8 @@ According to professor, Andy Lane, from Open University, technology has three ma
 <div created="20211007041316966" modified="20211007041541096" tags="" title="TrailMEnu">
 <pre>{{$:/core/ui/SideBar/Open}}</pre>
 </div>
-<div caption="TrailMenu" created="20211009204101416" modified="20211102041312542" tags="$:/tags/TextEditor/Snippet $:/tags/ViewToolbar" title="TrailMenuStamp">
-<pre>{{$:/core/ui/SideBar/Open}}
-
-\define newHereButtonTags()
-[[$(currentTiddler)$]]
-\end
-\define newHereButton()
-&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
-&lt;$action-sendmessage
-  $message=&quot;tm-new-tiddler&quot;
-$param=&quot;TITLE OF YOUR SKELETON BUTTON&quot;
-title=&quot;New tiddler&quot;
-  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
-{{TITLE OF YOUR SVG IMAGE TIDDLER}}
-&lt;/$list&gt;
-&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
-&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;CAPTION FOR YOUR BUTTON&quot;/&gt;&lt;/span&gt;
-&lt;/$list&gt;
-&lt;/$button&gt;
-\end
-
-&lt;&lt;newHereButton&gt;&gt;</pre>
+<div caption="TrailMenu" created="20211009204101416" modified="20211102041354018" tags="$:/tags/TextEditor/Snippet $:/tags/ViewToolbar" title="TrailMenuStamp">
+<pre>{{$:/core/ui/SideBar/Open}}</pre>
 </div>
 <div caption="Triangle bullet" created="20211020043545997" modified="20211020043823409" tags="$:/tags/TextEditor/Snippet" title="Triangle bullet">
 <pre>▸</pre>
