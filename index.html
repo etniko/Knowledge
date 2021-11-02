@@ -728,8 +728,6 @@ Error message and password prompt
 
 <li>direct labour</li>
 
-<li>Draft of '$:/Import'</li>
-
 <li>Draft of 'budget :: flexible'</li>
 
 <li>DroppableWidget</li>
@@ -12782,7 +12780,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div created="20210709040132173" modified="20210709050947687" title="$:/state/plugin-info-334910430-$:/core---1812962263">
 <pre>contents</pre>
 </div>
-<div created="20210706164159444" modified="20211102040333281" title="$:/state/showeditpreview">
+<div created="20210706164159444" modified="20211102040615164" title="$:/state/showeditpreview">
 <pre>yes</pre>
 </div>
 <div created="20210709051218233" modified="20210709051218233" title="$:/state/ShowPaletteEditor">
@@ -13091,7 +13089,7 @@ The content of the `&lt;$hover&gt;` widget is displayed within the button.
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20211102040323391" list="[[Draft of '$:/Import']] InfoEconomy" modified="20211102040323391" title="$:/StoryList">
+<div created="20211102040649384" list="TrailMenuStamp $:/AdvancedSearch $:/core/macros/image-picker $:/core/images/rotate-left $:/core/images/gitter $:/core/images/close-others-button InfoEconomy" modified="20211102041127703" title="$:/StoryList">
 <pre></pre>
 </div>
 <div created="20211010053330855" list="$:/core/ui/Buttons/home $:/core/ui/Buttons/close-all $:/core/ui/Buttons/fold-all $:/core/ui/Buttons/unfold-all $:/core/ui/Buttons/permaview $:/core/ui/Buttons/new-tiddler $:/core/ui/Buttons/new-journal $:/core/ui/Buttons/new-image $:/core/ui/Buttons/import $:/core/ui/Buttons/export-page $:/core/ui/Buttons/control-panel $:/core/ui/Buttons/palette $:/core/ui/Buttons/advanced-search $:/core/ui/Buttons/manager $:/core/ui/Buttons/tag-manager $:/core/ui/Buttons/language $:/core/ui/Buttons/theme $:/core/ui/Buttons/storyview $:/core/ui/Buttons/encryption $:/core/ui/Buttons/timestamp $:/core/ui/Buttons/full-screen $:/core/ui/Buttons/print $:/core/ui/Buttons/save-wiki $:/core/ui/Buttons/refresh $:/core/ui/Buttons/more-page-actions" modified="20211010053401823" title="$:/tags/PageControls">
@@ -17658,11 +17656,6 @@ The two damaging episodes of deflation in this century were the sharp drop in ov
 !!!!!Glem CMA Review th Edition, Irving N Gleim, Dale L. Flesher, 2012.
 </pre>
 </div>
-<div draft.of="$:/Import" draft.title="$:/Import" modified="20211102040318483" status="complete" title="Draft of '$:/Import'">
-<pre>The following tiddlers were imported:
-
-# [[20378651811537182984-512.png]]</pre>
-</div>
 <div modified="20211029233131167" title="Draft of 'budget :: flexible'">
 <pre></pre>
 </div>
@@ -19367,8 +19360,29 @@ According to professor, Andy Lane, from Open University, technology has three ma
 <div created="20211007041316966" modified="20211007041541096" tags="" title="TrailMEnu">
 <pre>{{$:/core/ui/SideBar/Open}}</pre>
 </div>
-<div caption="TrailMenu" created="20211009204101416" modified="20211009204430843" tags="$:/tags/TextEditor/Snippet" title="TrailMenuStamp">
-<pre>{{$:/core/ui/SideBar/Open}}</pre>
+<div caption="TrailMenu" created="20211009204101416" modified="20211102041158214" tags="$:/tags/TextEditor/Snippet" title="TrailMenuStamp">
+<pre>{{$:/core/ui/SideBar/Open}}
+
+\define newHereButtonTags()
+[[$(currentTiddler)$]]
+\end
+\define newHereButton()
+&lt;$button class=&lt;&lt;tv-config-toolbar-class&gt;&gt;&gt;
+&lt;$action-sendmessage
+  $message=&quot;tm-new-tiddler&quot;
+$param=&quot;TITLE OF YOUR SKELETON BUTTON&quot;
+title=&quot;New tiddler&quot;
+  tags=&lt;&lt;newHereButtonTags&gt;&gt; /&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-icons&gt;match[yes]]&quot;&gt;
+{{TITLE OF YOUR SVG IMAGE TIDDLER}}
+&lt;/$list&gt;
+&lt;$list filter=&quot;[&lt;tv-config-toolbar-text&gt;match[yes]]&quot;&gt;
+&lt;span class=&quot;tc-btn-text&quot;&gt;&lt;$text text=&quot;CAPTION FOR YOUR BUTTON&quot;/&gt;&lt;/span&gt;
+&lt;/$list&gt;
+&lt;/$button&gt;
+\end
+
+&lt;&lt;newHereButton&gt;&gt;</pre>
 </div>
 <div caption="Triangle bullet" created="20211020043545997" modified="20211020043823409" tags="$:/tags/TextEditor/Snippet" title="Triangle bullet">
 <pre>▸</pre>
